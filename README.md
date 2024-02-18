@@ -40,3 +40,7 @@
 	・IDE:Cloud9
 
 <!-- ## 使用素材 -->
+
+## 実装機能リストのURL
+
+https://docs.google.com/spreadsheets/d/1vz6ntrPL5pCDlZCVe20AuB58QfOpB-iPd5NXXzfdIfs/edit?usp=sharing
