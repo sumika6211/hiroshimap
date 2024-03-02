@@ -11,6 +11,48 @@
   </head>
 
   <body>
+    <header>
+      <div class = "logo" >
+        <%= link_to root_path do %>
+          <h2>HiroshiMap</h2>
+        <% end %>
+      </div>
+      <ul>
+        <% if user_signed_in? %>
+          <li>ようこそ<%= current_user.name %>さん！</li>
+          <li>スポット一覧</li>
+          <li>
+            <%= link_to user_path(current_user.id) do %>
+              マイページ
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              Log out
+            <% end %>
+          </li>
+        <% else %>
+          <li>ようこそゲストさん！</li>
+          <li>スポット一覧</li>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              Sign up
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path do %>
+              Log in
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </header>
+
+    <p class = "flash-message">
+      <%= flash[:notice] %>
+    </p>
+
     <%= yield %>
+
   </body>
 </html>
