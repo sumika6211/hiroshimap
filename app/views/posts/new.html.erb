@@ -1,2 +1,22 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>投稿する</h1>
+
+<%= form_with model: @post, url: posts_path, method: :post do |f| %>
+  <div class = "field">
+    <%= f.label :"タイトル" %>
+    <%= f.text_field :name, placeholder: "お店の名前を入れてください" %>
+  </div>
+
+  <div class = "field">
+    <%= f.label :"紹介文" %>
+    <%= f.text_field :introduction, placeholder: "お店の感想・お勧めのメニューなど教えてください" %>
+  </div>
+
+  <div class = "field">
+    <%= f.label :"画像" %>
+    <%= f.file_field :image, accept: "image/*" %>
+  </div>
+
+  <div class = "actions">
+    <%= f.submit "投稿する" %>
+  </div>
+<% end %>

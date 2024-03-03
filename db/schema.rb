@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 2024_03_02_120433) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_genre_id"
+    t.integer "spot_id"
     t.string "name"
     t.text "introduction"
     t.string "location"
