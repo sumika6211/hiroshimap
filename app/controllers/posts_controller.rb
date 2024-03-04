@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       flash[:notice] = "You have created post successfully."
       redirect_to post_path(@post.id)
     else
-      render :new_post_path
+      render :new
     end
   end
 
@@ -22,6 +22,26 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
+    unless @post.user == current_user
+      redirect_to post_path(params[:id])
+    end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      flash[:notice] = "You have updated post successfully."
+      redirect_to post_path(@post.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path
   end
 
   private

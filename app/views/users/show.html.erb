@@ -17,3 +17,16 @@
   </th>
   <th></th>
 </tr>
+
+<% @posts.each do |post| %>
+  <%= link_to post_path(post.id) do %>
+    <table class = "post-table">
+      <tr>
+        <th>店名：<%= post.name %></th>
+      </tr>
+      <tr>
+        <td><%= image_tag post.get_post_image(300,300) %></td>
+      </tr>
+    </table>
+  <% end %>
+<% end %>
