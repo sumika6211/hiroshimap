@@ -1,0 +1,28 @@
+<h1>エリア一覧</h1>
+
+<table class = "area-table">
+  <thead>
+    <tr>
+      <th>エリアID</th>
+      <th>エリア名</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @areas.each do |area| %>
+      <tr>
+        <td><%= area.id %></td>
+        <td><%= area.name %></td>
+        <td>
+          <%= link_to edit_area_path(area.id) do %>
+            編集する
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to new_area_path do %>
+  <p>エリア作成</p>
+<% end %>

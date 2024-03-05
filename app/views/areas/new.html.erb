@@ -1,0 +1,12 @@
+<h1>スポットを作成する</h1>
+
+<%= form_with model: @area, url: areas_path, method: :post do |f| %>
+  <div class = "field">
+    <%= f.label :"エリア名" %>
+    <%= f.text_field :name, placeholder: "エリア名を入力してください" %>
+  </div>
+
+  <div class = "actions">
+    <%= f.submit "作成する" %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<h1>エリア編集</h1>
+
+<%= form_with model: @area, url: area_path, method: :patch do |f| %>
+  <div class = "field">
+    <%= f.label :"エリア名" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class = "actions">
+    <%= f.submit "編集完了" %>
+  </div>
+<% end %>
