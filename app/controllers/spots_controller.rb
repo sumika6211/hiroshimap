@@ -15,12 +15,26 @@ class SpotsController < ApplicationController
   end
 
   def index
+    @spots = Spot.all
   end
 
   def edit
+    @spot = Spot.find(params[:id])
+    @areas = Area.all
+  end
+
+  def update
+    @spot = Spot.find(params[:id])
+    if @spot.update(spot_params)
+      flash[:notice] = "You have updated spot successfully."
+      redirect_to spot_path(@spot.id)
+    else
+      render :edit
+    end
   end
 
   def show
+    @spot = Spot.find(params[:id])
   end
 
   private

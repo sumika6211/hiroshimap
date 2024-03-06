@@ -1,2 +1,17 @@
-<h1>Spots#show</h1>
-<p>Find me in app/views/spots/show.html.erb</p>
+<h1>スポット詳細</h1>
+
+<div class = "spot-detail">
+  <p>スポット名：<%= @spot.name %></p>
+  <p>エリア名：<%= @spot.area.name %></p>
+  <%= link_to edit_spot_path(@spot.id) do %>
+    <p>スポットを編集する</p>
+  <% end %>
+</div>
+
+<%= link_to new_spot_path do %>
+  <p>スポット作成</p>
+<% end %>
+
+<%= link_to spots_path do %>
+  <p>スポット一覧</p>
+<% end %>
