@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :areas, except: [:show, :destroy]
   resources :spots, except: [:destroy]
+  resources :genres, except: [:show, :destroy]
 end

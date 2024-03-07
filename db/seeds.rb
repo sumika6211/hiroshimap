@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+genres = %w(
+  genre1
+  genre2
+  genre3
+)
+
+areas = %w(
+  広島市中心部
+  広島市安佐南・北
+  広島市佐伯区
+  宮島周辺エリア
+  しまなみ海道エリア
+  安芸エリア
+  備後エリア
+  備北エリア
+)
+
+genres.each do |name|
+  Genre.create!(name: name)
+end
+
+areas.each do |name|
+  Area.create!(name: name)
+end
