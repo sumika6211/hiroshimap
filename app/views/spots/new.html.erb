@@ -7,7 +7,7 @@
   </div>
 
   <div class = "select-field">
-    <%= f.collection_select :area_id, @areas, :id, :name, include_blank: "選択して下さい" %>
+    <%= f.collection_select :area_id, Area.all, :id, :name, include_blank: "選択して下さい" %>
   </div>
 
   <div class = "actions">

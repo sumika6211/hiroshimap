@@ -1,7 +1,6 @@
 class SpotsController < ApplicationController
   def new
     @spot = Spot.new
-    @areas = Area.all
   end
 
   def create

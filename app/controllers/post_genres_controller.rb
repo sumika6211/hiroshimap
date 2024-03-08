@@ -1,0 +1,2 @@
+class PostGenresController < ApplicationController
+end
