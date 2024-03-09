@@ -5,47 +5,53 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/d9d2324d55.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      <div class = "logo" >
-        <%= link_to root_path do %>
-          <h2>HiroshiMap</h2>
-        <% end %>
-      </div>
-      <ul>
-        <% if user_signed_in? %>
-          <li>ようこそ<%= current_user.name %>さん！</li>
-          <li>スポット一覧</li>
-          <li>
-            <%= link_to user_path(current_user.id) do %>
-              マイページ
+      <nav class = "navbar navbar-expand-lg bg-info">
+        <div class = "container">
+          <div class = "navbar-logo p-3">
+            <%= link_to root_path do %>
+              <h2>HiroshiMap</h2>
             <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              Log out
-            <% end %>
-          </li>
-        <% else %>
-          <li>ようこそゲストさん！</li>
-          <li>スポット一覧</li>
-          <li>
-            <%= link_to new_user_registration_path do %>
-              Sign up
-            <% end %>
-          </li>
-          <li>
-            <%= link_to new_user_session_path do %>
-              Log in
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
+          </div>
+          <ul class = "navbar-nav">
+            <div class = "row ml-auto">
+              <% if user_signed_in? %>
+                <li class = "nav-link">ようこそ<%= current_user.name %>さん！</li>
+                <li class = "nav-link">スポット一覧</li>
+                <li class = "nav-link">
+                  <%= link_to user_path(current_user.id) do %>
+                    マイページ
+                  <% end %>
+                </li>
+                <li class = "nav-link">
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    Log out
+                  <% end %>
+                </li>
+              <% else %>
+                <li class = "nav-link">ようこそゲストさん！</li>
+                <li class = "nav-link">スポット一覧</li>
+                <li class = "nav-link">
+                  <%= link_to new_user_registration_path do %>
+                    Sign up
+                  <% end %>
+                </li>
+                <li class = "nav-link">
+                  <%= link_to new_user_session_path do %>
+                    Log in
+                  <% end %>
+                </li>
+              <% end %>
+            </div>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <p class = "flash-message">

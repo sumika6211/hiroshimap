@@ -16,6 +16,18 @@
     <%= f.file_field :image, accept: "image/*" %>
   </div>
 
+  <div class = "selection">
+    <%= f.label :"スポット選択" %>
+    <%= f.collection_select :spot_id, Spot.all, :id, :name %>
+  </div>
+
+  <div class = "collection">
+    <%= f.label :"ジャンル選択(複数選択可)" %>
+    <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name, include_hidden: false) do |b| %>
+      <%= b.label { b.check_box + b.text } %>
+    <% end %>
+  </div>
+
   <div class = "actions">
     <%= f.submit "編集完了" %>
   </div>

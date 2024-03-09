@@ -14,5 +14,4 @@ class Post < ApplicationRecord
   def get_post_image(width, height)
     image.variant(resize_to_limit: [width, height]).processed
   end
-
 end
