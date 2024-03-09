@@ -1,34 +1,40 @@
-<h1>投稿する</h1>
+<div class = "row justify-content-center">
+  <div class = "col-8">
 
-<%= form_with model: @post, url: posts_path, method: :post do |f| %>
-  <div class = "field">
-    <%= f.label :"タイトル" %>
-    <%= f.text_field :name, placeholder: "お店の名前を入れてください" %>
-  </div>
+    <h4>投稿フォーム</h4>
 
-  <div class = "field">
-    <%= f.label :"紹介文" %>
-    <%= f.text_field :introduction, placeholder: "お店の感想・お勧めのメニューなど教えてください" %>
-  </div>
+    <%= form_with model: @post, url: posts_path, method: :post do |f| %>
+      <div class = "field mb-3">
+        <%= f.label :"タイトル" %><br>
+        <%= f.text_field :name, class: "form-control", placeholder: "お店の名前を入れてください" %>
+      </div>
 
-  <div class = "field">
-    <%= f.label :"画像" %>
-    <%= f.file_field :image, accept: "image/*" %>
-  </div>
+      <div class = "field mb-3">
+        <%= f.label :"紹介文" %><br>
+        <%= f.text_field :introduction, class: "form-control", placeholder: "お店の感想・お勧めのメニューなど教えてください" %>
+      </div>
 
-  <div class = "selection">
-    <%= f.label :"スポット選択" %>
-    <%= f.collection_select :spot_id, Spot.all, :id, :name, include_blank: "選択して下さい" %>
-  </div>
+      <div class = "field mb-3">
+        <%= f.label :"画像" %><br>
+        <%= f.file_field :image, accept: "image/*" %>
+      </div>
 
-  <div class = "collection">
-    <%= f.label :"ジャンル選択(複数選択可)" %><br>
-    <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name, include_hidden: false) do |b| %>
-      <%= b.label { b.check_box + b.text } %>
+      <div class = "selection mb-3">
+        <%= f.label :"スポット選択" %><br>
+        <%= f.collection_select :spot_id, Spot.all, :id, :name, include_blank: "選択して下さい" %>
+      </div>
+
+      <div class = "collection mb-3">
+        <%= f.label :"ジャンル選択(複数選択可)" %><br>
+        <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name, include_hidden: false) do |b| %>
+          <%= b.label { b.check_box + b.text } %>
+        <% end %>
+      </div>
+
+      <div class = "actions mb-3">
+        <%= f.submit "投稿する", class: "btn btn-success" %>
+      </div>
     <% end %>
-  </div>
 
-  <div class = "actions">
-    <%= f.submit "投稿する" %>
   </div>
-<% end %>
+</div>

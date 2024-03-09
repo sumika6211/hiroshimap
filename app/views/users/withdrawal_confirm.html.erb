@@ -1,8 +1,12 @@
-<h1>退会手続き</h1>
-<p>退会手続きにより投稿した内容も削除されます。<br>
-本当に退会しますか？</p>
-<p>
-  <%= link_to user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか？" do %>
-    退会する
-  <% end %>
-</p>
+<div class = "row justify-content-center">
+  <div class = "col-8">
+    <h4>退会手続き</h4>
+    <p>退会手続きにより投稿した内容も削除されます。<br>
+    本当に退会しますか？</p>
+    <p>
+      <%= link_to user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか？" do %>
+        退会する
+      <% end %>
+    </p>
+  </div>
+</div>

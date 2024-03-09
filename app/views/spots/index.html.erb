@@ -1,30 +1,36 @@
-<h1>スポット一覧</h1>
+<div class = "row justify-content-center">
+  <div class = "col-8">
 
-<table class = "spot-table">
-  <thead>
-    <tr>
-      <th>スポットID</th>
-      <th>スポット名</th>
-      <th>エリア</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @spots.each do |spot| %>
-      <tr>
-        <td><%= spot.id %></td>
-        <td><%= spot.name %></td>
-        <td><%= spot.area.name %></td>
-        <td>
-          <%= link_to edit_spot_path(spot.id) do %>
-            編集する
-          <% end %>
-        </td>
-      </tr>
+    <%= link_to new_spot_path do %>
+      <p>スポット作成</p>
     <% end %>
-  </tbody>
-</table>
 
-<%= link_to new_spot_path do %>
-  <p>スポット作成</p>
-<% end %>
+    <h4>スポット一覧</h4>
+
+    <table class = "spot-table">
+      <thead>
+        <tr>
+          <th>スポットID</th>
+          <th>スポット名</th>
+          <th>エリア</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @spots.each do |spot| %>
+          <tr>
+            <td><%= spot.id %></td>
+            <td><%= spot.name %></td>
+            <td><%= spot.area.name %></td>
+            <td>
+              <%= link_to edit_spot_path(spot.id) do %>
+                編集する
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>

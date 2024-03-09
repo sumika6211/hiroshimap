@@ -7,7 +7,7 @@ class SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
     if @spot.save
       flash[:notice] = "You have created spot successfully."
-      redirect_to spot_path(@spot.id)
+      redirect_to spots_path
     else
       render :new
     end
@@ -26,14 +26,10 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     if @spot.update(spot_params)
       flash[:notice] = "You have updated spot successfully."
-      redirect_to spot_path(@spot.id)
+      redirect_to spots_path
     else
       render :edit
     end
-  end
-
-  def show
-    @spot = Spot.find(params[:id])
   end
 
   private

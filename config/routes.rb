@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update, :destroy]
   resources :posts
   resources :areas, except: [:show, :destroy]
-  resources :spots, except: [:destroy]
+  resources :spots, except: [:destroy, :show]
   resources :genres, except: [:show, :destroy]
 end

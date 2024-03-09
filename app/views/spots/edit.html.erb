@@ -1,20 +1,27 @@
-<h1>スポット編集</h1>
+<div class = "row justify-content-center">
+  <div class = "col-8">
 
-<%= form_with model: @spot, url: spot_path, method: :patch do |f| %>
-  <div class = "field">
-    <%= f.label :"スポット名" %>
-    <%= f.text_field :name %>
+    <h4>スポット編集</h4>
+
+    <%= form_with model: @spot, url: spot_path, method: :patch do |f| %>
+      <div class = "field mb-3">
+        <%= f.label :"スポット名" %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class = "select-field mb-3">
+        <%= f.label :"所属エリア選択" %>
+        <%= f.collection_select :area_id, @areas, :id, :name, include_blank: "選択して下さい" %>
+      </div>
+
+      <div class = "actions mb-3">
+        <%= f.submit "編集完了", class: "btn btn-success" %>
+      </div>
+    <% end %>
+
+    <%= link_to spots_path do %>
+      戻る
+    <% end %>
+
   </div>
-
-  <div class = "select-field">
-    <%= f.collection_select :area_id, @areas, :id, :name, include_blank: "選択して下さい" %>
-  </div>
-
-  <div class = "actions">
-    <%= f.submit "編集完了" %>
-  </div>
-<% end %>
-
-<%= link_to spot_path(@spot.id) do %>
-  戻る
-<% end %>
+</div>

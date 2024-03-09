@@ -1,23 +1,29 @@
-<div class = "post-user-profile">
-  <%= image_tag @post.user.get_profile_image(100,100) %>
-  <%= @post.user.name %>
-</div>
+<div class = "row justify-content-center">
+  <div class = "col-8">
 
-<div class ="post-detail">
-  <p>店名：<%= @post.name %></p>
-  <p><%= image_tag @post.get_post_image(500,500) %></p>
-  <p><%= @post.introduction %></p>
-  <p>スポット：<%= @post.spot.name %></p>
-  <% @post.genre_ids.each do |f| %>
-    <p><%= Genre.find(f).name %></p>
-  <% end %>
-  <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
-  <% if @post.user == current_user %>
-    <%= link_to edit_post_path(@post.id) do %>
-      <p>投稿を編集する</p>
-    <% end %>
-    <%= link_to post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>
-      <p>投稿を削除する</p>
-    <% end %>
-  <% end %>
+    <div class = "post-user-profile mb-3">
+      <%= image_tag @post.user.get_profile_image(100,100) %>
+      <%= @post.user.name %>
+    </div>
+
+    <div class ="post-detail">
+      <p>店名：<%= @post.name %></p>
+      <p><%= image_tag @post.get_post_image(500,500) %></p>
+      <p><%= @post.introduction %></p>
+      <p>スポット：<%= @post.spot.name %></p>
+      <% @post.genre_ids.each do |f| %>
+        <p><%= Genre.find(f).name %></p>
+      <% end %>
+      <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+      <% if @post.user == current_user %>
+        <%= link_to edit_post_path(@post.id) do %>
+          <p>投稿を編集する</p>
+        <% end %>
+        <%= link_to post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>
+          <p>投稿を削除する</p>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
 </div>

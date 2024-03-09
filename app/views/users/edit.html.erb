@@ -1,23 +1,28 @@
-<h1>Users edit</h1>
+<div class = "row justify-content-center">
+  <div class = "col-8">
+    <h4>会員情報編集</h4>
 
-<%= form_with model: @user do |f| %>
-  <div class = "field" >
-    <%= f.label :Name %><br>
-    <%= f.text_field :name, autofocus: true %>
+    <%= form_with model: @user do |f| %>
+      <div class = "field mb-3" >
+        <%= f.label :Name %><br>
+        <%= f.text_field :name, class: "form-control", autofocus: true %>
+      </div>
+
+      <div class = "field mb-3" >
+        <%= f.label :"プロフィール画像" %><br>
+        <%= f.file_field :profile_image %>
+      </div>
+
+      <div class = "actions mb-3" >
+        <%= f.submit "編集完了", class: "btn btn-success" %>
+      </div>
+    <% end %>
+
+    <div class = "withdrawl" >
+      <%= link_to withdrawal_confirm_path do %>
+        退会手続き
+      <% end %>
+    </div>
+
   </div>
-
-  <div class = "field" >
-    <%= f.label :Image %><br>
-    <%= f.file_field :profile_image %>
-  </div>
-
-  <div class = "actions" >
-    <%= f.submit "Update User" %>
-  </div>
-<% end %>
-
-<div class = "withdrawl" >
-  <%= link_to withdrawal_confirm_path do %>
-    退会手続き
-  <% end %>
 </div>
