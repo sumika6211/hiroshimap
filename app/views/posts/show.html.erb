@@ -5,7 +5,7 @@
       <div class = "col-3">
         <%= image_tag @post.user.get_profile_image(100,100) %>
       </div>
-      <table class = "col-3">
+      <table class = "col-4">
         <tr>
           <td><%= @post.user.name %></td>
         </tr>
@@ -16,6 +16,16 @@
           <td>スポット：<%= @post.spot.name %></td>
         </tr>
       </table>
+      <% if @post.user == current_user %>
+        <div class = "col-3 mx-auto">
+          <%= link_to edit_post_path(@post.id) do %>
+            投稿編集<br>
+          <% end %>
+          <%= link_to post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>
+            投稿削除
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
     <div class ="post-detail">
@@ -37,17 +47,32 @@
       <% end %>
       <p><%= @post.introduction %></p>
       <% @post.genre_ids.each do |f| %>
-        <p><%= Genre.find(f).name %></p>
+        #<%= Genre.find(f).name %>
       <% end %>
       <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+    </div>
 
-      <% if @post.user == current_user %>
-        <%= link_to edit_post_path(@post.id) do %>
-          <p>投稿を編集する</p>
-        <% end %>
-        <%= link_to post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>
-          <p>投稿を削除する</p>
-        <% end %>
+    <div class = "post-comment">
+      <p>コメント件数：<%= @post.post_comments.count %></p>
+      <% @post.post_comments.each do |post_comment| %>
+        <div class = "post-comment-detail d-flex mb-1">
+          <p><%= image_tag post_comment.user.get_profile_image(100,100) %></p>
+          <p><%= post_comment.user.name %>　<%= post_comment.created_at.strftime('%Y/%m/%d') %><br>
+          <%= post_comment.comment %></p>
+          <% if post_comment.user == current_user %>
+            <p>
+              <%= link_to post_post_comment_path(post_comment.post, post_comment), method: :delete do %>
+                <br>コメント削除
+              <% end %>
+            </p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class = "post-comment-field">
+      <%= form_with(model: [@post, @post_comment]) do |f| %>
+        <%= f.text_area :comment, placeholder: "コメントをここに" %>
+        <%= f.submit "送信する", class: "btn btn-success" %>
       <% end %>
     </div>
 
