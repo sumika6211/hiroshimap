@@ -1,20 +1,46 @@
 <div class = "row justify-content-center">
   <div class = "col-8">
 
-    <div class = "post-user-profile mb-3">
-      <%= image_tag @post.user.get_profile_image(100,100) %>
-      <%= @post.user.name %>
+    <div class = "post-detail d-flex mb-1">
+      <div class = "col-3">
+        <%= image_tag @post.user.get_profile_image(100,100) %>
+      </div>
+      <table class = "col-3">
+        <tr>
+          <td><%= @post.user.name %></td>
+        </tr>
+        <tr>
+          <td>店名：<%= @post.name %></td>
+        </tr>
+        <tr>
+          <td>スポット：<%= @post.spot.name %></td>
+        </tr>
+      </table>
     </div>
 
     <div class ="post-detail">
-      <p>店名：<%= @post.name %></p>
       <p><%= image_tag @post.get_post_image(500,500) %></p>
+      <% if @post.favorited_by?(current_user) %>
+        <p>
+          <%= link_to post_favorite_path(@post), method: :delete do %>
+            ♥
+          <% end %>
+          いいね！<%= @post.favorites.count %>件
+        </p>
+      <% else %>
+        <p>
+          <%= link_to post_favorite_path(@post), method: :post do %>
+            ♡
+          <% end %>
+          いいね！<%= @post.favorites.count %>件
+        </p>
+      <% end %>
       <p><%= @post.introduction %></p>
-      <p>スポット：<%= @post.spot.name %></p>
       <% @post.genre_ids.each do |f| %>
         <p><%= Genre.find(f).name %></p>
       <% end %>
       <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+
       <% if @post.user == current_user %>
         <%= link_to edit_post_path(@post.id) do %>
           <p>投稿を編集する</p>

@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   belongs_to :spot
   has_many :post_genres
   has_many :genres, through: :post_genres
+  has_many :favorites, dependent: :destroy
 
   has_one_attached :image
 
@@ -14,4 +15,9 @@ class Post < ApplicationRecord
   def get_post_image(width, height)
     image.variant(resize_to_limit: [width, height]).processed
   end
+
+  def favorited_by?(user)
+    favorites.exists?(user_id: user.id)
+  end
+
 end

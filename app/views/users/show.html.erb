@@ -1,4 +1,4 @@
-<h2>Users info</h2>
+<h3 class = "row justify-content-center mb-3">Users info</h3>
 
 <div class = "d-flex justify-content-center mb-3">
   <div class = "col-3　mr-0">
@@ -6,10 +6,13 @@
   </div>
   <table class = "col-2">
     <tr>
-      <th>name</th>
+      <th>name：</th>
       <th><%= @user.name %></th>
+      <th></th>
     </tr>
     <tr>
+      <th>投稿：</th>
+      <th><%= @user.posts.count %></th>
       <th>
         <% if @user.id == current_user.id %>
           <%= link_to edit_user_path(@user.id) do %>
@@ -17,7 +20,6 @@
           <% end %>
         <% end %>
       </th>
-      <th></th>
     </tr>
   </table>
 </div>
@@ -35,6 +37,7 @@
           </tr>
         </table>
       <% end %>
+      <p>いいね！<%= post.favorites.count %>件</p>
     </div>
   <% end %>
 </div>
