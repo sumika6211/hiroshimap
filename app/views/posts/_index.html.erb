@@ -1,0 +1,17 @@
+<div class = "d-flex justify-content-center flex-wrap">
+  <% posts.each do |post| %>
+    <div class = "col-4">
+      <%= link_to post_path(post.id) do %>
+        <table class = "post-table">
+          <tr>
+            <th>店名：<%= post.name %></th>
+          </tr>
+          <tr>
+            <td><%= image_tag post.get_post_image(300,300) %></td>
+          </tr>
+        </table>
+      <% end %>
+      <p>いいね！<%= post.favorites.count %>件</p>
+    </div>
+  <% end %>
+</div>

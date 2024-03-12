@@ -6,6 +6,8 @@ class Post < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :post_comments, dependent: :destroy
 
+  scope :like, -> (a){ Favorite.where(user_id: a).pluck(:post_id) }
+
   has_one_attached :image
 
   validates :name, presence: true

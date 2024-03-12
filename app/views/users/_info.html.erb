@@ -1,0 +1,36 @@
+<div class = "d-flex justify-content-center mb-3">
+  <div class = "col-3　mr-0">
+    <%= image_tag user.get_profile_image(100,100) %>
+  </div>
+  <table class = "col-2">
+    <tr>
+      <th>name：</th>
+      <th><%= user.name %></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>投稿：</th>
+      <th><%= user.posts.count %></th>
+    </tr>
+  </table>
+</div>
+
+<div class = "d-flex justify-content-center mb-3">
+  <div class = "col-3 mr-1">
+    <%= link_to user_path(user.id) do %>
+      投稿一覧
+    <% end %>
+  </div>
+  <div class = "col-3 mr-1">
+    <%= link_to favorites_user_path(user.id) do %>
+      いいね！一覧
+    <% end %>
+  </div>
+  <% if @user.id == current_user.id %>
+    <div class = "col-3">
+      <%= link_to edit_user_path(user.id) do %>
+        会員情報編集
+      <% end %>
+    </div>
+  <% end %>
+</div>

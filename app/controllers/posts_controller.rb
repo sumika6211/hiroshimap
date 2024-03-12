@@ -19,9 +19,6 @@ class PostsController < ApplicationController
     @post_comment = PostComment.new
   end
 
-  def index
-  end
-
   def edit
     @post = Post.find(params[:id])
     unless @post.user == current_user

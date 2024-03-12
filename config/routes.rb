@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   post '/homes/guest_sign_in' => 'homes#new_guest', as: "guest_sign_in"
   get "/users/withdrawal_confirm" => "users#withdrawal_confirm", as: "withdrawal_confirm"
-  resources :users, only: [:show, :edit, :update, :destroy]
+  resources :users, only: [:show, :edit, :update, :destroy]do
+    member do
+      get :favorites
+    end
+  end
   resources :posts do
     resource :favorite, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
