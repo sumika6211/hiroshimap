@@ -17,18 +17,18 @@
 
 <div class = "d-flex justify-content-center mb-3">
   <div class = "col-3 mr-1">
-    <%= link_to user_path(user.id) do %>
+    <%= link_to user_path(user), "data-turbolinks": false do %>
       投稿一覧
     <% end %>
   </div>
   <div class = "col-3 mr-1">
-    <%= link_to favorites_user_path(user.id) do %>
+    <%= link_to favorites_user_path(user), "data-turbolinks": false do %>
       いいね！一覧
     <% end %>
   </div>
   <% if @user.id == current_user.id %>
     <div class = "col-3">
-      <%= link_to edit_user_path(user.id) do %>
+      <%= link_to edit_user_path(user) do %>
         会員情報編集
       <% end %>
     </div>
