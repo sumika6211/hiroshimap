@@ -8,10 +8,18 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.save
       flash[:notice] = "You have created post successfully."
-      redirect_to post_path(@post.id)
+      redirect_to post_path(@post)
     else
       render :new
     end
+  end
+
+  def index
+    @posts = Post.all
+    @spots = Spot.all
+    @genres = Genre.all
+    @posts = @posts.where(spot_id: params[:spot_id]) if params[:spot_id].present?
+    @posts = @posts.where(genre_ids: params[:genre_id]) if params[:genre_id].present?
   end
 
   def show
@@ -30,7 +38,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:notice] = "You have updated post successfully."
-      redirect_to post_path(@post.id)
+      redirect_to post_path(@post)
     else
       render :edit
     end

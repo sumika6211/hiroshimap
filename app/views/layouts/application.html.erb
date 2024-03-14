@@ -25,7 +25,7 @@
                 <li class = "nav-link">ようこそ<%= current_user.name %>さん！</li>
                 <li class = "nav-link">スポット一覧</li>
                 <li class = "nav-link">
-                  <%= link_to user_path(current_user.id) do %>
+                  <%= link_to user_path(current_user.id), "data-turbolinks": false do %>
                     マイページ
                   <% end %>
                 </li>

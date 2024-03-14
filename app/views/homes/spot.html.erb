@@ -1,0 +1,11 @@
+<h2 class = "row justify-content-center mb-3">スポットで探す</h2>
+
+<div class = "d-flex justify-content-center flex-wrap">
+  <% @spots.each do |spot| %>
+    <div class = "col-3">
+      <%= link_to posts_path do %>
+        ○<%= spot.name %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
