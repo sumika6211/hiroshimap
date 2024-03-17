@@ -6,6 +6,14 @@ class HomesController < ApplicationController
     @spots = Spot.all
   end
 
+  def area
+    @areas = Area.all
+  end
+
+  def genre
+    @genres = Genre.all
+  end
+
   def new_guest
     user = User.find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64

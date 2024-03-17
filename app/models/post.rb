@@ -21,4 +21,7 @@ class Post < ApplicationRecord
     favorites.exists?(user_id: user.id)
   end
 
+  def self.favorited_order
+    self.find(Favorite.group(:post_id).order('count(post_id) desc').pluck(:post_id))
+  end
 end

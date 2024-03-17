@@ -1,10 +1,10 @@
-<h2 class = "row justify-content-center mb-3">スポットで探す</h2>
+<h2 class = "row justify-content-center mb-3">エリアで探す</h2>
 
 <div class = "d-flex justify-content-center flex-wrap">
-  <% @spots.each do |spot| %>
+  <% @areas.each do |area| %>
     <div class = "col-3">
-      <%= link_to posts_path(spot_id: spot.id) do %>
-        ○<%= spot.name %>
+      <%= link_to posts_path(area_id: area.id) do %>
+        ○<%= area.name %>
       <% end %>
     </div>
   <% end %>
@@ -12,8 +12,8 @@
 
 <div class = "d-flex justify-content-center flex-wrap">
   <div class = "col-5">
-    <%= link_to "/homes/area" do %>
-      <p>エリア一覧</p>
+    <%= link_to "/homes/spot" do %>
+      <p>スポット一覧</p>
     <% end %>
   </div>
   <div class = "col-5">
