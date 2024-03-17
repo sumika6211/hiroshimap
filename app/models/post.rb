@@ -23,5 +23,6 @@ class Post < ApplicationRecord
 
   def self.favorited_order
     self.find(Favorite.group(:post_id).order('count(post_id) desc').pluck(:post_id))
+    #self.joins(:favorites).group('favorites.post_id').order('count(favorites.post_id) desc')
   end
 end

@@ -23,7 +23,11 @@
             <div class = "row ml-auto">
               <% if user_signed_in? %>
                 <li class = "nav-link">ようこそ<%= current_user.name %>さん！</li>
-                <li class = "nav-link">スポット一覧</li>
+                <li class = "nav-link">
+                  <%= link_to "/homes/spot" do %>
+                    スポット一覧
+                  <% end %>
+                </li>
                 <li class = "nav-link">
                   <%= link_to user_path(current_user.id), "data-turbolinks": false do %>
                     マイページ
@@ -31,20 +35,24 @@
                 </li>
                 <li class = "nav-link">
                   <%= link_to destroy_user_session_path, method: :delete do %>
-                    Log out
+                    ログアウト
                   <% end %>
                 </li>
               <% else %>
                 <li class = "nav-link">ようこそゲストさん！</li>
-                <li class = "nav-link">スポット一覧</li>
+                <li class = "nav-link">
+                  <%= link_to "/homes/spot" do %>
+                    スポット一覧
+                  <% end %>
+                </li>
                 <li class = "nav-link">
                   <%= link_to new_user_registration_path do %>
-                    Sign up
+                    新規登録
                   <% end %>
                 </li>
                 <li class = "nav-link">
                   <%= link_to new_user_session_path do %>
-                    Log in
+                    ログイン
                   <% end %>
                 </li>
               <% end %>

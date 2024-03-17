@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  if controller_name != "homes" || controller_name != "posts"
+    before_action :authenticate_user!, except: [:top, :spot, :area, :genre, :index]
+  end
   before_action :ensure_guest_user, only: [:edit]
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -29,5 +32,4 @@ class ApplicationController < ActionController::Base
       redirect_to user_path(current_user) , notice: "ゲストユーザーはプロフィール編集画面へ遷移できません。"
     end
   end
-
 end
