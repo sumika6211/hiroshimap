@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
+    @posts = @posts.includes(:favorites).where("favorites.user_id": params[:favorites]) if params[:favorites].present?
     if @user.email == 'guest@example.com'
       redirect_to root_path
     end
@@ -38,12 +39,6 @@ class UsersController < ApplicationController
     user = User.find(current_user)
     user.destroy
     redirect_to root_path
-  end
-
-  def favorites
-    @user = User.find(params[:id])
-    favorites = @user.favorites.pluck(:post_id)
-    @favorite_posts = Post.find(favorites)
   end
 
   private

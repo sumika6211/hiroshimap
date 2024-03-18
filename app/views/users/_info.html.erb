@@ -22,7 +22,7 @@
     <% end %>
   </div>
   <div class = "col-3 mr-1">
-    <%= link_to favorites_user_path(user), "data-turbolinks": false do %>
+    <%= link_to user_path(user, favorites: user.id), "data-turbolinks": false do %>
       いいね！一覧
     <% end %>
   </div>
