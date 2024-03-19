@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
-  if controller_name != "homes" || controller_name != "posts"
+  if controller_name != "homes" || controller_name != "homes"
     before_action :authenticate_user!, except: [:top, :spot, :area, :genre, :index]
   end
-  before_action :ensure_guest_user, only: [:edit]
+  if controller_name == "homes"
+    before_action :ensure_guest_user, only: [:edit]
+  end
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_up_path_for(resource)

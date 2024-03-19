@@ -1,55 +1,59 @@
 <div class = "row justify-content-center">
   <div class = "col-8">
-
-    <div class = "post-detail d-flex mb-1">
-      <div class = "col-3">
-        <%= image_tag @post.user.get_profile_image(100,100) %>
-      </div>
-      <table class = "col-4">
-        <tr>
-          <td><%= @post.user.name %></td>
-        </tr>
-        <tr>
-          <td>店名：<%= @post.name %></td>
-        </tr>
-        <tr>
-          <td>スポット：<%= @post.spot.name %></td>
-        </tr>
-      </table>
-      <% if @post.user == current_user %>
-        <div class = "col-3 mx-auto">
-          <%= link_to edit_post_path(@post.id) do %>
-            投稿編集<br>
-          <% end %>
-          <%= link_to post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>
-            投稿削除
+    <div class = "card">
+      <%= image_tag 'hiroshima.jpg', size:"700x700", class:"card-img" %>
+      <div class = "card-img-overlay">
+        <div class = "post-user d-flex mb-1">
+          <div class = "col-3">
+            <%= image_tag @post.user.get_profile_image(100,100), class:"rounded-circle" %>
+          </div>
+          <table class = "col-4">
+            <tr>
+              <td><%= @post.user.name %></td>
+            </tr>
+            <tr>
+              <td>店名：<%= @post.name %></td>
+            </tr>
+            <tr>
+              <td>スポット：<%= @post.spot.name %></td>
+            </tr>
+          </table>
+          <% if @post.user == current_user %>
+            <div class = "col-3 mx-auto">
+              <%= link_to edit_post_path(@post.id) do %>
+                <i class="fas fa-user-cog"></i>投稿編集<br>
+              <% end %>
+              <%= link_to post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>
+                <i class="fa-solid fa-trash"></i>投稿削除
+              <% end %>
+            </div>
           <% end %>
         </div>
-      <% end %>
-    </div>
-
-    <div class ="post-detail">
-      <p><%= image_tag @post.get_post_image(500,500) %></p>
-      <% if @post.favorited_by?(current_user) %>
-        <p>
-          <%= link_to post_favorite_path(@post), method: :delete do %>
-            ♥
-          <% end %>
-          いいね！<%= @post.favorites.count %>件
-        </p>
-      <% else %>
-        <p>
-          <%= link_to post_favorite_path(@post), method: :post do %>
-            ♡
-          <% end %>
-          いいね！<%= @post.favorites.count %>件
-        </p>
-      <% end %>
-      <p><%= @post.introduction %></p>
-      <% @post.genres.each do |genre| %>
-        #<%= genre.name %>
-      <% end %>
-      <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+        <div class = "post-detail">
+          <div class = "card-img-top"><%= image_tag @post.get_post_image(500,500) %></div>
+            <% if @post.favorited_by?(current_user) %>
+              <p>
+                <%= link_to post_favorite_path(@post), method: :delete do %>
+                  <i class="fa-solid fa-heart"></i>
+                <% end %>
+                いいね！<%= @post.favorites.count %>件
+              </p>
+            <% else %>
+              <p>
+                <%= link_to post_favorite_path(@post), method: :post do %>
+                  <i class="fa-regular fa-heart"></i>
+                <% end %>
+                いいね！<%= @post.favorites.count %>件
+              </p>
+            <% end %>
+            <p><%= @post.introduction %></p>
+            <% @post.genres.each do |genre| %>
+              #<%= genre.name %>
+            <% end %>
+            <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class = "post-comment">

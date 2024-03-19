@@ -1,0 +1,17 @@
+<h3>User info</h3>
+<div>
+  <%= image_tag current_user.get_profile_image(100,100) %><br>
+  <%= current_user.name %>
+</div>
+
+<div class = "user-edit-link mb-3">
+  <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
+    <i class="fas fa-user-cog"></i>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to new_post_path, class: "btn btn-outline-secondary btn-block" do %>
+    投稿する
+  <% end %>
+</div>
