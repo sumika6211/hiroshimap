@@ -1,11 +1,11 @@
-<div class = "row justify-content-center">
-  <div class = "col-8">
+<div class = "row">
+  <div class = "col-md-8 offset-md-2">
     <div class = "card">
       <%= image_tag 'hiroshima.jpg', size:"700x700", class:"card-img" %>
       <div class = "card-img-overlay">
         <div class = "post-user d-flex mb-1">
           <div class = "col-3">
-            <%= image_tag @post.user.get_profile_image(100,100), class:"rounded-circle" %>
+            <%= image_tag @post.user.get_profile_image, class: "rounded-circle" %>
           </div>
           <table class = "col-4">
             <tr>
@@ -30,7 +30,7 @@
           <% end %>
         </div>
         <div class = "post-detail">
-          <div class = "card-img-top"><%= image_tag @post.get_post_image(500,500) %></div>
+          <div class = "card-img-top"><%= image_tag @post.get_post_image(500,500), class: "img-fluid" %></div>
             <% if @post.favorited_by?(current_user) %>
               <p>
                 <%= link_to post_favorite_path(@post), method: :delete do %>
@@ -54,8 +54,6 @@
           </div>
         </div>
       </div>
-    </div>
-
     <div class = "post-comment">
       <p>コメント件数：<%= @post.post_comments.count %></p>
       <% @post.post_comments.each do |post_comment| %>
@@ -79,6 +77,5 @@
         <%= f.submit "送信する", class: "btn btn-success" %>
       <% end %>
     </div>
-
   </div>
 </div>

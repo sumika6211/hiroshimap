@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 genres = %w(
-  genre1
-  genre2
+  ランチ
+  ディナー
   genre3
 )
 
