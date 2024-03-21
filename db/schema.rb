@@ -76,11 +76,10 @@ ActiveRecord::Schema.define(version: 2024_03_10_031632) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "post_genre_id"
     t.integer "spot_id"
     t.string "name"
     t.text "introduction"
-    t.string "location"
+    t.string "address"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
@@ -90,7 +89,7 @@ ActiveRecord::Schema.define(version: 2024_03_10_031632) do
   create_table "spots", force: :cascade do |t|
     t.integer "area_id"
     t.string "name"
-    t.string "location"
+    t.string "address"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false

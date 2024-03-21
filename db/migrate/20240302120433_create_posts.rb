@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.integer :spot_id
       t.string :name
       t.text :introduction
-      t.string :location
+      t.string :address
       t.float :latitude
       t.float :longitude
       t.timestamps

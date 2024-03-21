@@ -9,7 +9,6 @@
 genres = %w(
   ランチ
   ディナー
-  genre3
 )
 
 areas = %w(

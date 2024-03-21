@@ -28,6 +28,7 @@ class PostsController < ApplicationController
 	def show
 		@post = Post.find(params[:id])
 		@post_comment = PostComment.new
+		#post_json = point_to_hash(@post).to_json
 	end
 
 	def edit
@@ -56,6 +57,6 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:name, :introduction, :spot_id, :image, genre_ids: [])
+		params.require(:post).permit(:name, :introduction, :spot_id, :image, :address, :latitude, :longitude, genre_ids: [])
 	end
 end

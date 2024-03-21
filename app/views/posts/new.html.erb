@@ -31,6 +31,22 @@
         <% end %>
       </div>
 
+      <div data-controller = "google-map--form">
+        <%= f.label :"キーワードで探す" %><br>
+        <%= f.search_field :keyword, data: { google_map__form_target: "keyword" } %><br>
+
+        <%= f.label :"緯度" %>
+        <%= f.number_field :latitude, data: { google_map__form_target: "latitude" }, tabindex: -1, readonly: true, class: "looks_disable" %>
+        <%= f.label :"経度" %>
+        <%= f.number_field :longitude, data: { google_map__form_target: "longitude" }, tabindex: -1, readonly: true, class: "looks_disable"%><br>
+
+        <div data-google-map--form-target="map" style="height:30vh;max-width:300px;"></div>
+
+        <%= f.label :"address" %>
+        <%= f.text_field :address, list: "address_list", data: { google_map__form_target: "address" } %><br>
+        <datalist id = "address_list" data-google-map--form-target = "addressList" ></datalist>
+      </div>
+
       <div class = "actions mb-3">
         <%= f.submit "投稿する", class: "btn btn-success" %>
       </div>
