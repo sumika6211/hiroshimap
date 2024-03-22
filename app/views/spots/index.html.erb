@@ -1,5 +1,5 @@
 <div class = "row justify-content-center">
-  <div class = "col-8">
+  <div class = "col-md-12">
 
     <%= link_to new_spot_path do %>
       <p>スポット作成</p>
@@ -13,6 +13,7 @@
           <th>スポットID</th>
           <th>スポット名</th>
           <th>エリア</th>
+          <th>住所</th>
           <th></th>
         </tr>
       </thead>
@@ -22,6 +23,7 @@
             <td><%= spot.id %></td>
             <td><%= spot.name %></td>
             <td><%= spot.area.name %></td>
+            <td><%= spot.address %></td>
             <td>
               <%= link_to edit_spot_path(spot.id) do %>
                 編集する

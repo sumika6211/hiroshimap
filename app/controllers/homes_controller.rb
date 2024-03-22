@@ -4,6 +4,7 @@ class HomesController < ApplicationController
 
   def spot
     @spots = Spot.all
+    @spots_json = @spots.map { |o| spot_to_hash(o) }.to_json
   end
 
   def area
@@ -21,6 +22,15 @@ class HomesController < ApplicationController
     end
     sign_in user
     redirect_to root_path, notice: "ゲストユーザーとしてログインしました"
+  end
+
+  private
+
+  def spot_to_hash(spot)
+    { id: spot.id,
+      name: spot.name,
+      lat: spot.latitude,
+      lng: spot.longitude }
   end
 
 end
