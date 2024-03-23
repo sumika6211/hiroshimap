@@ -24,38 +24,28 @@ export default class extends ApplicationController {
     const loader = this.setLoader()
     loader.load().then(async () => {
       const { Map } = await google.maps.importLibrary("maps");
-      // 地図を statis values の情報から作成
       map = new Map(this.mapTarget, {
         center: this.locationValue,
         zoom: this.zoomValue,
       })
-      // 地図に全マーカーをセット
       this.addMarkersToMap()
     })
   }
 
-  // ###地図にピンを追加する
-
   addMarkersToMap() {
-    // 全ポイントをループで１件ずつ処理
     this.pointsValue.forEach((o, i) => {
-      // markers　に 座標データー１件を追加
       this.addMarkerToMarkers(o)
-      // infoWindowｓ に 吹き出しデーターを１件追加
       this.addInfoWindowToInfoWindows(o)
-      // マーカーに該当する吹き出しを開くクリックイベントを追加
       this.addEventToMarker(i)
     })
   }
 
   addMarkerToMarkers(o) {
-    // 引数の値からマーカーを１件作成
     this._marker = new google.maps.Marker({
       position: { lat: o.lat, lng: o.lng },
       map,
       name: o.name
     })
-    // markersに１件マーカーを追加
     markers.push(this._marker)
   }
 
@@ -77,9 +67,7 @@ export default class extends ApplicationController {
   }
 
   addEventToMarker(i) {
-    // i番目のマーカーにクリックイベントを追加
     markers[i].addListener('click', () => {
-      // 同じインデックス番号iを吹き出しを開く
       infoWindows[i].open(map, markers[i]);
     });
   }

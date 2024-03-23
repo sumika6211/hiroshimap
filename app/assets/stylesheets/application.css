@@ -3,3 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.jumbotron {
+  background-image: url("top_image.jpg");
+  background-size: cover;
+  background-position: center 60%;
+}
