@@ -1,0 +1,29 @@
+<div class = "row justify-content-center">
+  <div class = "col-md-12">
+    <h3>ユーザー一覧</h3>
+    <table class = "spot-table">
+      <thead>
+        <tr>
+          <th>ユーザーID</th>
+          <th>ユーザー名</th>
+          <th>メールアドレス</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td>
+              <%= link_to edit_spot_path(spot.id) do %>
+                退会させる
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

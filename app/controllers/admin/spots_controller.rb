@@ -1,4 +1,7 @@
-class SpotsController < ApplicationController
+class Admin::SpotsController < ApplicationController
+  #layout "admin"
+  before_action :authenticate_admin!
+
   def new
     @spot = Spot.new
   end

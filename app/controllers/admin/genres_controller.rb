@@ -1,4 +1,7 @@
-class GenresController < ApplicationController
+class Admin::GenresController < ApplicationController
+  #layout "admin"
+  before_action :authenticate_admin!
+
   def new
     @genre = Genre.new
   end

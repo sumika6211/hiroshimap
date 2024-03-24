@@ -1,4 +1,7 @@
-class AreasController < ApplicationController
+class Admin::AreasController < ApplicationController
+  #layout "admin"
+  before_action :authenticate_admin!
+
   def new
     @area = Area.new
   end
