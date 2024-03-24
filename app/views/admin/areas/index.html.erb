@@ -1,7 +1,7 @@
 <div class = "row">
   <div class = "col-md-10 offset-md-2">
 
-    <%= link_to new_area_path do %>
+    <%= link_to new_admin_area_path do %>
       <p>エリア作成</p>
     <% end %>
 
@@ -21,7 +21,7 @@
             <td><%= area.id %></td>
             <td><%= area.name %></td>
             <td>
-              <%= link_to edit_area_path(area.id) do %>
+              <%= link_to edit_admin_area_path(area.id) do %>
                 編集する
               <% end %>
             </td>

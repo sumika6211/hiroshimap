@@ -1,5 +1,5 @@
 class Admin::SpotsController < ApplicationController
-  #layout "admin"
+  layout "admin"
   before_action :authenticate_admin!
 
   def new
@@ -10,7 +10,7 @@ class Admin::SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
     if @spot.save
       flash[:notice] = "You have created spot successfully."
-      redirect_to spots_path
+      redirect_to admin_spots_path
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Admin::SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     if @spot.update(spot_params)
       flash[:notice] = "You have updated spot successfully."
-      redirect_to spots_path
+      redirect_to admin_spots_path
     else
       render :edit
     end

@@ -3,7 +3,7 @@
 
     <h4>エリアを作成する</h4>
 
-    <%= form_with model: @area, url: areas_path, method: :post do |f| %>
+    <%= form_with model: @area, url: admin_areas_path, method: :post do |f| %>
       <div class = "field mb-3">
         <%= f.label :"エリア名" %>
         <%= f.text_field :name, class: "form-control", placeholder: "エリア名を入力してください" %>
@@ -14,7 +14,7 @@
       </div>
     <% end %>
 
-    <%= link_to areas_path do %>
+    <%= link_to admin_areas_path do %>
       <p>エリア一覧</p>
     <% end %>
 

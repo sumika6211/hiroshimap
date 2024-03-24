@@ -3,7 +3,7 @@
 
     <h4>エリア編集</h4>
 
-    <%= form_with model: @area, url: area_path, method: :patch do |f| %>
+    <%= form_with model: @area, url: admin_area_path, method: :patch do |f| %>
       <div class = "field mb-3">
         <%= f.label :"エリア名" %>
         <%= f.text_field :name, class: "form-control" %>
@@ -14,7 +14,7 @@
       </div>
     <% end %>
 
-    <%= link_to areas_path do %>
+    <%= link_to admin_areas_path do %>
       <p>エリア一覧</p>
     <% end %>
 

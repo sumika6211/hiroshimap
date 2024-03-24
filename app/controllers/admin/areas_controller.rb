@@ -1,5 +1,5 @@
 class Admin::AreasController < ApplicationController
-  #layout "admin"
+  layout "admin"
   before_action :authenticate_admin!
 
   def new
@@ -10,7 +10,7 @@ class Admin::AreasController < ApplicationController
     @area = Area.new(area_params)
     if @area.save
       flash[:notice] = "You have created area successfully."
-      redirect_to areas_path
+      redirect_to admin_areas_path
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Admin::AreasController < ApplicationController
     @area = Area.find(params[:id])
     if @area.update(area_params)
       flash[:notice] = "You have updated area successfully."
-      redirect_to areas_path
+      redirect_to admin_areas_path
     else
       render :edit
     end

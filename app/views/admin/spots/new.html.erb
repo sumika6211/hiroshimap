@@ -1,12 +1,12 @@
 <div class = "row">
-  <div class = "col-md-10 offset-md-2">
+  <div class = "col-md-8 mx-auto">
 
-    <h4>スポット編集</h4>
+    <h4>スポット作成フォーム</h4>
 
-    <%= form_with model: @spot, url: spot_path, method: :patch do |f| %>
+    <%= form_with model: @spot, url: admin_spots_path, method: :post do |f| %>
       <div class = "field mb-3">
-        <%= f.label :"スポット名" %>
-        <%= f.text_field :name, class: "form-control" %>
+        <%= f.label :"スポット名" %><br>
+        <%= f.text_field :name, class: "form-control", placeholder: "スポット名を入力してください" %>
       </div>
 
       <div data-controller = "google-map--form mb-3">
@@ -18,7 +18,7 @@
         <%= f.label :"経度" %>
         <%= f.number_field :longitude, data: { google_map__form_target: "longitude" }, tabindex: -1, readonly: true, class: "looks_disable"%><br>
 
-        <div data-google-map--form-target="map" style="height:30vh;max-width:300px;"></div>
+        <div data-google-map--form-target="map" style="height:30vh;max-width:50%;"></div>
 
         <%= f.label :"address" %>
         <%= f.text_field :address, list: "address_list", data: { google_map__form_target: "address" } %><br>
@@ -26,17 +26,17 @@
       </div>
 
       <div class = "select-field mb-3">
-        <%= f.label :"所属エリア選択" %>
-        <%= f.collection_select :area_id, @areas, :id, :name, include_blank: "選択して下さい" %>
+        <%= f.label :"所属エリア選択" %><br>
+        <%= f.collection_select :area_id, Area.all, :id, :name, include_blank: "選択して下さい" %>
       </div>
 
       <div class = "actions mb-3">
-        <%= f.submit "編集完了", class: "btn btn-success" %>
+        <%= f.submit "作成する", class: "btn btn-success" %>
       </div>
     <% end %>
 
-    <%= link_to spots_path do %>
-      戻る
+    <%= link_to admin_spots_path do %>
+      <p>スポット一覧</p>
     <% end %>
 
   </div>
