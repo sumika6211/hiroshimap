@@ -55,7 +55,7 @@ export default class extends ApplicationController {
     // リンクには data-turbolinks="false" でリロードさせるとJS側のワーニングが出ない。
     this._infoWindow = new google.maps.InfoWindow({
       content: `
-        <a href="/posts data-turbolinks="false">
+        <a href="/posts?spot_id=${o.id}" data-turbolinks="false">
           ${o.name}
         </a>
       `

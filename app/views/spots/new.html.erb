@@ -1,5 +1,5 @@
 <div class = "row">
-  <div class = "col-md-10 offset-md-2">
+  <div class = "col-md-8 mx-auto">
 
     <h4>スポット作成フォーム</h4>
 
@@ -18,7 +18,7 @@
         <%= f.label :"経度" %>
         <%= f.number_field :longitude, data: { google_map__form_target: "longitude" }, tabindex: -1, readonly: true, class: "looks_disable"%><br>
 
-        <div data-google-map--form-target="map" style="height:30vh;max-width:300px;"></div>
+        <div data-google-map--form-target="map" style="height:30vh;max-width:50%;"></div>
 
         <%= f.label :"address" %>
         <%= f.text_field :address, list: "address_list", data: { google_map__form_target: "address" } %><br>
