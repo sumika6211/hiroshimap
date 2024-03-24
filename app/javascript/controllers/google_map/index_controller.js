@@ -7,8 +7,8 @@ let infoWindows = []
 // Connects to data-controller="google-map--index"
 export default class extends ApplicationController {
   static values = { location: {
-                        lat: 34.397667,
-                        lng: 132.4753786
+                        lat: 34.3926867,
+                        lng: 132.4522012
                     },
                     zoom: 5,
                     points: [] }
@@ -54,10 +54,8 @@ export default class extends ApplicationController {
     // 吹き出しの中にはpoints/:idへのリンク
     // リンクには data-turbolinks="false" でリロードさせるとJS側のワーニングが出ない。
     this._infoWindow = new google.maps.InfoWindow({
-      //const param = "params[spot_id]";
-      //const spot_id = ${o.id};
       content: `
-        <a href="/posts?"+param data-turbolinks="false">
+        <a href="/posts data-turbolinks="false">
           ${o.name}
         </a>
       `

@@ -5,7 +5,8 @@
 }
 
 .jumbotron {
-  background-image: url("top_image.jpg");
+  height: 700px;
+  background-image: url("torii.jpg");
   background-size: cover;
-  background-position: center 60%;
+  background-position: top;
 }

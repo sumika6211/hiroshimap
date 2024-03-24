@@ -1,8 +1,8 @@
-<h3 class = "row justify-content-center mb-3">スポットで探す</h3>
+<h3 class = "col-md-10 offset-md-1 text-center mb-3">スポットで探す</h3>
 
-<div class = "d-flex justify-content-center flex-wrap mb-3">
+<div class = "d-flex justify-content-center flex-wrap col-md-8 offset-md-2 mb-3">
   <% @spots.each do |spot| %>
-    <div class = "col-3 ml-1">
+    <div class = "mx-5">
       <%= link_to posts_path(spot_id: spot.id) do %>
         ○<%= spot.name %>
       <% end %>
@@ -11,18 +11,18 @@
 </div>
 
 <div data-controller="google-map--index">
-  <div class = "col-md-10 offset-md-1">
-    <div data-google-map--index-target="map" data-json="<%= @spots_json %>" style="height:50vh;max-width:800px;"></div>
+  <div class = "col-md-10 offset-md-1 mb-3">
+    <div class="mx-auto" data-google-map--index-target="map" data-json="<%= @spots_json %>" style="height:50vh;max-width:75%;"></div>
   </div>
 </div>
 
-<div class = "row">
-  <div class = "col-md-4 offset-md-2">
+<div class = "d-flex justify-content-center">
+  <div class = "mx-5">
     <%= link_to "/homes/area" do %>
       <p>エリア一覧</p>
     <% end %>
   </div>
-  <div class = "col-md-4">
+  <div class = "mx-5">
     <%= link_to "/homes/genre" do %>
       <p>ジャンル一覧</p>
     <% end %>
