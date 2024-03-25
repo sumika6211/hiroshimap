@@ -1,16 +1,15 @@
 <div class = "d-flex justify-content-center flex-wrap col-md-8 mx-auto">
   <% posts.each do |post| %>
-    <div class = "col-4 mx-auto">
-      <%= link_to post_path(post.id) do %>
-        <table class = "post-table">
-          <tr>
-            <th>店名：<%= post.name %></th>
-          </tr>
-          <tr>
-            <td><%= image_tag post.get_post_image(300,300) %></td>
-          </tr>
-        </table>
-      <% end %>
+    <div class = "card col-md-4 mx-auto">
+      <%= image_tag 'hiroshima.jpg', size:"100%", class:"card-img" %>
+        <div class = "card-img-overlay p-0">
+          <h6 class = "col-md-10 mx-auto text-center"><%= post.name %></h6>
+          <div class = "col-md-8 mx-auto">
+            <%= link_to post_path(post.id) do %>
+              <%= image_tag post.get_post_image(500,500), class: "img-fluid" %>
+            <% end %>
+          </div>
+        </div>
       <p>いいね！<%= post.favorites.count %>件</p>
     </div>
   <% end %>

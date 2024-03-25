@@ -1,16 +1,23 @@
 <div class = "top jumbotron jumbotron-fluid">
   <div class = "col-md-12 my-5 text-center">
-    <%= link_to "/homes/spot" do %>
+    <%= link_to "/homes/spot", class:"text-danger" do %>
       <br><h1>Welcome to HiroshiMap</h1><br>
     <% end %>
   </div>
   <div class = "col-md-12 my-5 text-center">
-    <%= link_to new_user_session_path do %>
+    <%= link_to new_user_session_path, class:"text-danger" do %>
       <br><h1>Join HiroshiMap member</h1><br>
     <% end %>
   </div>
 </div>
 
-<div class = "row justify-content-center">
-  <h1>What's HiroshiMap?</h1>
+<div class = "new-posts col-md-10 mx-auto mb-5">
+  <h2 class = "text-center mb-5">New Posts pick up!</h2>
+  <%= render "public/posts/list", posts: @posts %>
+</div>
+
+<div class = "about jumbotron jumbotron-fluid">
+  <div class = "col-md-10 mx-auto">
+    <h1 class = "text-center my-5">What's HiroshiMap?</h1>
+  </div>
 </div>
