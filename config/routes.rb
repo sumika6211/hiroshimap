@@ -3,11 +3,11 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
   namespace :admin do
-    get "dashboards" => "dashboards#index"
-    resources :users, only: [:destroy]
+    resources :users, only: [:index, :destroy]
     resources :areas, except: [:show, :destroy]
     resources :spots, except: [:destroy, :show]
     resources :genres, except: [:show, :destroy]
+    resources :post_comments, only: [:index, :destroy]
   end
   scope module: :public do
     devise_for :users

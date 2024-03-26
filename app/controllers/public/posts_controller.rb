@@ -21,7 +21,7 @@ class Public::PostsController < ApplicationController
 		@posts = @posts.where("spot.area_id": params[:area_id]) if params[:area_id].present?
 		@posts = @posts.where(spot_id: params[:spot_id]) if params[:spot_id].present?
 		@posts = @posts.where("post_genres.genre_id": params[:genre_id]) if params[:genre_id].present?
-		@posts = @posts.where("name or introduction like ?", "%#{params[:name]}%") if params[:name].present?
+		@posts = @posts.where("name like ? or introduction like ?", "%#{params[:name]}%", "%#{params[:name]}%") if params[:name].present?
 		@posts = @posts.favorited_order if params[:favorites].present?
 	end
 

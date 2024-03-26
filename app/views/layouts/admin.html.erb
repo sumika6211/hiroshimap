@@ -21,7 +21,8 @@
           <ul class = "navbar-nav">
             <div class = "row ml-auto">
               <% if admin_signed_in? %>
-                <li class = "nav-link"><%= link_to "ユーザー一覧", admin_dashboards_path %></li>
+                <li class = "nav-link"><%= link_to "ユーザー一覧", admin_users_path %></li>
+                <li class = "nav-link"><%= link_to "コメント一覧", admin_post_comments_path %></li>
                 <li class = "nav-link"><%= link_to "スポット一覧", admin_spots_path %></li>
                 <li class = "nav-link"><%= link_to "エリア一覧", admin_areas_path %></li>
                 <li class = "nav-link"><%= link_to "ジャンル一覧", admin_genres_path %></li>

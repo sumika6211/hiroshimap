@@ -7,8 +7,8 @@
 
     <h4>ジャンル一覧</h4>
 
-    <table class = "genre-table">
-      <thead>
+    <table class = "genre-table table-bordered table-sm col-md-8 mb-3">
+      <thead class="table-info">
         <tr>
           <th>ジャンルID</th>
           <th>ジャンル名</th>
@@ -21,7 +21,7 @@
             <td><%= genre.id %></td>
             <td><%= genre.name %></td>
             <td>
-              <%= link_to edit_admin_genre_path(genre.id) do %>
+              <%= link_to edit_admin_genre_path(genre) do %>
                 編集する
               <% end %>
             </td>

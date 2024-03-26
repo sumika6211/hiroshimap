@@ -5,10 +5,10 @@
       <p>エリア作成</p>
     <% end %>
 
-    <h1>エリア一覧</h1>
+    <h4 class = "my-3">エリア一覧</h4>
 
-    <table class = "area-table　mb-3">
-      <thead>
+    <table class = "area-table table-bordered table-sm col-md-8 mb-3">
+      <thead class="table-info">
         <tr>
           <th>エリアID</th>
           <th>エリア名</th>
@@ -21,7 +21,7 @@
             <td><%= area.id %></td>
             <td><%= area.name %></td>
             <td>
-              <%= link_to edit_admin_area_path(area.id) do %>
+              <%= link_to edit_admin_area_path(area) do %>
                 編集する
               <% end %>
             </td>
