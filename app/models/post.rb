@@ -13,8 +13,8 @@ class Post < ApplicationRecord
   validates :image, presence: true
   validates :spot_id, presence: true
 
-  def get_post_image(width, height)
-    image.variant(resize_to_limit: [width, height]).processed
+  def get_post_image(width_fit, height_fit, width_crop, height_crop)
+    image.variant(resize_to_fit: [width_fit, height_fit], gravity: "center", crop: "#{width_crop}x#{height_crop}+0+0").processed
   end
 
   def favorited_by?(user)
