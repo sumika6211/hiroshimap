@@ -4,9 +4,25 @@
   box-sizing: border-box;
 }
 
-.top {
+.top1 {
   height: 700px;
   background-image: url("torii.jpg");
+  background-size: cover;
+  background-position: top;
+  opacity: 0.7;
+}
+
+.top2 {
+  height: 700px;
+  background-image: url("onomichi1.jpg");
+  background-size: cover;
+  background-position: top;
+  opacity: 0.7;
+}
+
+.top3 {
+  height: 700px;
+  background-image: url("shimanami.jpg");
   background-size: cover;
   background-position: top;
   opacity: 0.7;
