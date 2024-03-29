@@ -2,7 +2,7 @@ class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
-    @posts = @posts.includes(:favorites).where("favorites.user_id": params[:favorites]) if params[:favorites].present?
+    @favorite_posts = @posts.includes(:favorites).where("favorites.user_id": @user.id)
     if @user.email == 'guest@example.com'
       redirect_to root_path
     end

@@ -35,3 +35,20 @@
   background-position: top;
   opacity: 0.9;
 }
+
+.tab-area {
+  height: 50px;
+  cursor: pointer;
+}
+.tab.active {
+  background-color: #ccc;
+  color: #222e3e;
+  border: none;
+}
+.content {
+  display: none;
+}
+.content.show {
+  margin-top: 50px;
+  display: block;
+}

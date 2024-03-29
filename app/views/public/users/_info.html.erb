@@ -15,22 +15,46 @@
   </table>
 </div>
 
-<div class = "d-flex justify-content-center col-md-8 mx-auto mb-3">
-  <div class = "col-3 mx-1">
-    <%= link_to user_path(user), "data-turbolinks": false do %>
+<div class = "tab-area d-flex justify-content-center col-md-8 mx-auto mb-3">
+  <div class = "tab active col-3 mx-1">
+    <%#= link_to user_path(user), "data-turbolinks": false do %>
       投稿一覧
-    <% end %>
+    <%# end %>
   </div>
-  <div class = "col-3 mx-1">
-    <%= link_to user_path(user, favorites: user.id), "data-turbolinks": false do %>
+  <div class = "tab col-3 mx-1">
+    <%#= link_to user_path(user, favorites: user.id), "data-turbolinks": false do %>
       いいね！一覧
-    <% end %>
+    <%# end %>
   </div>
-  <% if @user.id == current_user.id %>
-    <div class = "col-3 mx-1">
-      <%= link_to edit_user_path(user) do %>
+  <%# if user.id == current_user.id %>
+    <div class = "tab col-3 mx-1">
+      <%#= link_to edit_user_path(user) do %>
         会員情報編集
-      <% end %>
+      <%# end %>
     </div>
-  <% end %>
+  <%# end %>
 </div>
+
+<div class="content-area">
+  <div class="content show">
+    tabu
+  </div>
+  <div class="content">
+    タブ２の中身です
+  </div>
+  <div class="content">
+    タブ３の中身です
+  </div>
+</div>
+
+<script>
+  $(function() {
+    let tabs = $(".tab"); // tabのクラスを全て取得し、変数tabsに配列で定義
+    $(".tab").on("click", function() { // tabをクリックしたらイベント発火
+      $(".active").removeClass("active"); // activeクラスを消す
+      $(this).addClass("active"); // クリックした箇所にactiveクラスを追加
+      const index = tabs.index(this); // クリックした箇所がタブの何番目か判定し、定数indexとして定義
+      $(".content").removeClass("show").eq(index).addClass("show"); // showクラスを消して、contentクラスのindex番目にshowクラスを追加
+    })
+  })
+</script>
