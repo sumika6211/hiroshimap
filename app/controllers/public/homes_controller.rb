@@ -1,6 +1,8 @@
 class Public::HomesController < ApplicationController
   def top
-    @posts = Post.limit(3).order(created_at: :desc)
+    @posts = Post.all.includes(:favorites)
+    @new_posts = @posts.limit(3).order(created_at: :desc)
+    #@popular_posts = @posts.limit(3).order()
   end
 
   def spot
