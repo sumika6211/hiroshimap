@@ -1,9 +1,5 @@
 class ApplicationController < ActionController::Base
-  unless :admin_controller?
-    if controller_name != "homes" || controller_name != "homes"
-      before_action :authenticate_user!, except: [:top, :spot, :area, :genre, :index]
-    end
-  end
+  before_action :authenticate_user!, except: [:top], unless: :admin_controller?
 
   if controller_name == "homes"
     before_action :ensure_guest_user, only: [:edit]

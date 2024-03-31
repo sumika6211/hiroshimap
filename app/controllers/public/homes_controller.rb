@@ -2,7 +2,7 @@ class Public::HomesController < ApplicationController
   def top
     @posts = Post.all.includes(:favorites)
     @new_posts = @posts.limit(3).order(created_at: :desc)
-    #@popular_posts = @posts.limit(3).order()
+    @popular_posts = @posts.favorited_order.limit(3)
   end
 
   def spot

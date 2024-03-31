@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body{
+  padding-top: 100px;
+}
+
 .top1 {
   height: 700px;
   background-image: url("torii.jpg");
@@ -11,7 +15,6 @@
   background-position: top;
   opacity: 0.7;
 }
-
 .top2 {
   height: 700px;
   background-image: url("onomichi1.jpg");
@@ -19,7 +22,6 @@
   background-position: top;
   opacity: 0.7;
 }
-
 .top3 {
   height: 700px;
   background-image: url("heiwakouen2.jpg");
@@ -40,10 +42,9 @@
   height: 50px;
   cursor: pointer;
 }
+
 .tab.active {
-  background-color: #ccc;
-  color: #222e3e;
-  border: none;
+  border-bottom: 5px solid #FF99CC;
 }
 .content {
   display: none;
