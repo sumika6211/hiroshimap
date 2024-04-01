@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 
-body{
-  padding-top: 100px;
+html body{
+  background-color: #FAF0E6;
 }
 
 .top1 {
@@ -35,7 +35,10 @@ body{
   background-image: url("yakei.jpg");
   background-size: cover;
   background-position: top;
-  opacity: 0.9;
+}
+
+.introduction{
+  opacity: 0.8;
 }
 
 .tab-area {

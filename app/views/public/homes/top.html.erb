@@ -1,17 +1,21 @@
 <div class = "slider">
-  <div class = "top1 jumbotron jumbotron-fluid">
+  <div class = "top1 jumbotron jumbotron-fluid rounded">
+    <div class = "col-md-12 my-5 text-center">
+      <h1>Hiroshimap</h1>
+      <p>－広島好きで作る―</p>
+    </div>
     <div class = "col-md-12 my-5 text-center">
       <%= link_to "/homes/spot", class:"text-danger" do %>
-        <br><h1>Welcome to HiroshiMap</h1><br>
+        <br><h2>Welcome to HiroshiMap</h2><br>
       <% end %>
     </div>
     <div class = "col-md-12 my-5 text-center">
       <%= link_to new_user_session_path, class:"text-danger", "data-turbolinks": false do %>
-        <br><h1>Join HiroshiMap member</h1><br>
+        <br><h2>Join HiroshiMap member</h2><br>
       <% end %>
     </div>
   </div>
-  <div class = "top2 jumbotron jumbotron-fluid">
+  <div class = "top2 jumbotron jumbotron-fluid rounded">
     <div class = "col-md-12 my-5 text-center">
       <%= link_to "/homes/spot", class:"text-danger" do %>
         <br><h1>Welcome to HiroshiMap</h1><br>
@@ -23,7 +27,7 @@
       <% end %>
     </div>
   </div>
-  <div class = "top3 jumbotron jumbotron-fluid">
+  <div class = "top3 jumbotron jumbotron-fluid rounded">
     <div class = "col-md-12 my-5 text-center">
       <%= link_to "/homes/spot", class:"text-danger" do %>
         <br><h1>Welcome to HiroshiMap</h1><br>
@@ -43,7 +47,7 @@
     <div class = "tab text-center mx-3"><h2>Popular Posts Pick up!</h2></div>
   </div>
 
-  <div class = "content-area">
+  <div class = "content-area col-md-12 mb-5">
     <div class = "content show">
       <%= render "public/posts/list", posts: @new_posts %>
     </div>
@@ -54,9 +58,9 @@
 </div>
 
 <div class = "about jumbotron jumbotron-fluid">
-  <div class = "introduction col-md-10 mx-auto">
-    <h1 class = "text-center my-5 text-danger">What's HiroshiMap?</h1>
-    <p class = "text-center text-danger">広島が好きなみんなで作るサイトになります！<br>
+  <div class = "introduction col-md-4 bg-secondary h-50 ml-5">
+    <h1 class = "text-center my-5 py-5 text-light">What's HiroshiMap?</h1>
+    <p class = "text-center text-light">広島が好きなみんなで作るサイトになります！<br>
       広島のスポット周辺のおすすめのお店を紹介してください！<br>
       休日のお出かけに！旅行に！観光に！<br>
       美味しいものを食べましょう！
