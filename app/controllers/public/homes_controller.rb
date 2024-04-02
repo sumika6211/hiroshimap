@@ -8,13 +8,7 @@ class Public::HomesController < ApplicationController
   def spot
     @spots = Spot.all
     @spots_json = @spots.map { |o| spot_to_hash(o) }.to_json
-  end
-
-  def area
     @areas = Area.all
-  end
-
-  def genre
     @genres = Genre.all
   end
 

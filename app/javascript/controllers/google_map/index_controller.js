@@ -50,9 +50,6 @@ export default class extends ApplicationController {
   }
 
   addInfoWindowToInfoWindows(o) {
-    // 引数の値から吹き出しを１件作成
-    // 吹き出しの中にはpoints/:idへのリンク
-    // リンクには data-turbolinks="false" でリロードさせるとJS側のワーニングが出ない。
     this._infoWindow = new google.maps.InfoWindow({
       content: `
         <a href="/posts?spot_id=${o.id}" data-turbolinks="false">
@@ -60,7 +57,6 @@ export default class extends ApplicationController {
         </a>
       `
     })
-    // infoWindowに1件吹き出しを追加
     infoWindows.push(this._infoWindow)
   }
 

@@ -1,10 +1,10 @@
-<h2 class = "col-md-10 offset-md-1 text-center mb-3">エリアで探す</h2>
+<h2 class = "col-md-10 offset-md-1 text-center mb-3"><i class="fa-solid fa-map"></i> エリアで探す</h2>
 
 <div class = "d-flex justify-content-center flex-wrap col-md-8 offset-md-2 mb-3">
   <% @areas.each do |area| %>
-    <div class = "mx-5">
-      <%= link_to posts_path(area_id: area.id) do %>
-        ○<%= area.name %>
+    <div class = "mx-5 my-2 px-3 py-1 rounded-pill bg-info">
+      <%= link_to posts_path(area_id: area.id), class: "text-light" do %>
+        <i class="fa-solid fa-map"></i> <%= area.name %>
       <% end %>
     </div>
   <% end %>
@@ -13,12 +13,12 @@
 <div class = "d-flex justify-content-center">
   <div class = "mx-5">
     <%= link_to "/homes/spot" do %>
-      <p>スポット一覧</p>
+      <p><i class="fa-solid fa-location-dot"></i> スポット一覧</p>
     <% end %>
   </div>
   <div class = "mx-5">
     <%= link_to "/homes/genre" do %>
-      <p>ジャンル一覧</p>
+      <p><i class="fa-solid fa-hashtag"></i> ジャンル一覧</p>
     <% end %>
   </div>
 </div>
