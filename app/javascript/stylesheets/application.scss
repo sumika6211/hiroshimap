@@ -1,1 +1,65 @@
 @use '~bootstrap/scss/bootstrap';
+@use 'slick-theme.css';
+@use 'slick.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html body{
+  background-color: #FAF0E6;
+  font-family: "Comic Sans MS";
+}
+
+.top1 {
+  height: 700px;
+  background-image: url("../images/torii.jpg");
+  background-size: cover;
+  background-position: top;
+  opacity: 0.9
+}
+.top2 {
+  height: 700px;
+  background-image: url("../images/onomichi1.jpg");
+  background-size: cover;
+  background-position: top;
+  opacity: 0.9;
+}
+.top3 {
+  height: 700px;
+  background-image: url("../images/heiwakouen2.jpg");
+  background-size: cover;
+  background-position: top;
+  opacity: 0.9;
+}
+.top-introduction{
+  background-color: rgba( 173, 216, 238, 0.5);
+}
+
+.about {
+  height: 1000px;
+  background-image: url("../images/yakei.jpg");
+  background-size: cover;
+  background-position: top;
+}
+.about-introduction{
+  background-color: rgba( 100, 100, 100, 0.7);
+}
+
+.tab-area {
+  height: 50px;
+  cursor: pointer;
+}
+
+.tab.active {
+  border-bottom: 5px solid #FF99CC;
+}
+.content {
+  display: none;
+}
+.content.show {
+  margin-top: 50px;
+  display: block;
+}
