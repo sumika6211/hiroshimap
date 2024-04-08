@@ -1,20 +1,20 @@
 <div class = "row">
-  <div class = "col-md-10 offset-md-2">
+  <div class = "col-md-10 col-12 offset-md-2">
 
     <h4 class = "my-3">ユーザー一覧</h4>
 
     <%= form_with url: admin_users_path, method: :get, local: true do |f| %>
-      <div class = "serch-field col-md-5 mb-1">
+      <div class = "serch-field col-md-5 col-10 mb-1">
         <%= f.label :"キーワード検索" %><br>
         <%= f.search_field :name, value: params[:name], class: "form-control me-2", placeholder: "Search" %>
       </div>
 
-      <div class = "actions col-md-5 mb-3">
+      <div class = "actions col-md-5 col-3 mb-3">
         <%= f.submit "Search", class: "btn btn-outline-success" %>
       </div>
     <% end %>
 
-    <table class = "spot-table table-bordered table-sm col-md-8 mb-3">
+    <table class = "spot-table table-bordered table-sm col-md-8 col-12 mb-3">
       <thead class="table-info">
         <tr>
           <th>ユーザーID</th>

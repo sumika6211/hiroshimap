@@ -1,10 +1,10 @@
-<h3 class = "row justify-content-center mb-3">Users info</h3>
+<h3 class = "text-center mx-auto mb-3">Users info</h3>
 
 <div class = "d-flex justify-content-center mb-3">
-  <div class = "col-md-1">
+  <div class = "col-md-1 col-4">
     <%= image_tag @user.get_profile_image, class: "rounded-circle" %>
   </div>
-  <table class = "col-2">
+  <table class = "col-md-2 col-7">
     <tr>
       <th>name：</th>
       <th><%= @user.name %></th>
@@ -24,9 +24,9 @@
   </table>
 </div>
 
-<div class = "tab-area d-flex justify-content-center align-items-end col-md-8 mx-auto mb-3">
-  <div class = "tab active mx-5">投稿一覧</div>
-  <div class = "tab mx-5">いいね！一覧</div>
+<div class = "tab-area d-flex justify-content-center align-items-end col-md-8 col-12 mx-auto mb-3">
+  <div class = "tab active text-center col-md-2 col-5 mx-md-5 mr-1">投稿一覧</div>
+  <div class = "tab text-center col-md-2 col-5 mx-md-5 ml-1">いいね！一覧</div>
 </div>
 
 <div class="content-area">

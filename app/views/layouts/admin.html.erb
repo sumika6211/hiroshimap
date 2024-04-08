@@ -6,27 +6,27 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://kit.fontawesome.com/d9d2324d55.js" crossorigin="anonymous"></script>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
 
   <body>
     <header>
-      <nav class = "navbar navbar-expand-lg bg-info">
-        <div class = "container">
+      <nav class = "navbar navbar-expand-md">
+        <div class = "container-fluid">
           <div class = "navbar-logo p-3">
             <h2>HiroshiMap</h2>
           </div>
           <ul class = "navbar-nav">
             <div class = "row ml-auto">
               <% if admin_signed_in? %>
-                <li class = "nav-link"><%= link_to "ユーザー一覧", admin_users_path %></li>
-                <li class = "nav-link"><%= link_to "コメント一覧", admin_post_comments_path %></li>
-                <li class = "nav-link"><%= link_to "スポット一覧", admin_spots_path %></li>
-                <li class = "nav-link"><%= link_to "エリア一覧", admin_areas_path %></li>
-                <li class = "nav-link"><%= link_to "ジャンル一覧", admin_genres_path %></li>
-                <li class = "nav-link"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+                <li class = "nav-link rounded-pill bg-info mx-md-3 mx-1 p-1"><%= link_to "ユーザー一覧", admin_users_path, class: "text-light" %></li>
+                <li class = "nav-link rounded-pill bg-info mx-md-3 mx-1 p-1"><%= link_to "コメント一覧", admin_post_comments_path, class: "text-light" %></li>
+                <li class = "nav-link rounded-pill bg-info mx-md-3 mx-1 p-1"><%= link_to "スポット一覧", admin_spots_path, class: "text-light" %></li>
+                <li class = "nav-link rounded-pill bg-info mx-md-3 mx-1 p-1"><%= link_to "エリア一覧", admin_areas_path, class: "text-light" %></li>
+                <li class = "nav-link rounded-pill bg-info mx-md-3 mx-1 p-1"><%= link_to "ジャンル一覧", admin_genres_path, class: "text-light" %></li>
+                <li class = "nav-link rounded-pill bg-info mx-md-3 mx-1 p-1"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "text-light" %></li>
               <% end %>
             </div>
           </ul>
