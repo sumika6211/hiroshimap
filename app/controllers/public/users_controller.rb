@@ -29,7 +29,7 @@ class Public::UsersController < ApplicationController
   end
 
   def withdrawal_confirm
-    @user = User.find(current_user)
+    @user = User.find(current_user.id)
     if current_user.email == 'guest@example.com'
       redirect_to root_path
     end

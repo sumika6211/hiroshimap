@@ -13,6 +13,7 @@ import "jquery";
 import "popper.js";
 import "bootstrap";
 import "./layout.js";
+import "./top_link.js";
 import "../stylesheets/application";
 
 Rails.start()
