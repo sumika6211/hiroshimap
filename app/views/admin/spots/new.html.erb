@@ -1,15 +1,15 @@
-<div class = "row">
-  <div class = "col-md-8 mx-auto">
+<div class="row">
+  <div class="col-md-8 mx-auto">
 
     <h4>スポット作成フォーム</h4>
 
     <%= form_with model: @spot, url: admin_spots_path, method: :post do |f| %>
-      <div class = "field mb-3">
+      <div class="field mb-3">
         <%= f.label :"スポット名" %><br>
         <%= f.text_field :name, class: "form-control", placeholder: "スポット名を入力してください" %>
       </div>
 
-      <div data-controller = "google-map--form mb-3">
+      <div data-controller="google-map--form mb-3">
         <%= f.label :"キーワードで探す" %><br>
         <%= f.search_field :keyword, data: { google_map__form_target: "keyword" } %><br>
 
@@ -22,15 +22,15 @@
 
         <%= f.label :"address" %>
         <%= f.text_field :address, list: "address_list", data: { google_map__form_target: "address" } %><br>
-        <datalist id = "address_list" data-google-map--form-target = "addressList" ></datalist>
+        <datalist id="address_list" data-google-map--form-target="addressList" ></datalist>
       </div>
 
-      <div class = "select-field mb-3">
+      <div class="select-field mb-3">
         <%= f.label :"所属エリア選択" %><br>
         <%= f.collection_select :area_id, Area.all, :id, :name, include_blank: "選択して下さい" %>
       </div>
 
-      <div class = "actions mb-3">
+      <div class="actions mb-3">
         <%= f.submit "作成する", class: "btn btn-success" %>
       </div>
     <% end %>

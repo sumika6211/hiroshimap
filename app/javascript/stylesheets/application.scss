@@ -2,6 +2,8 @@
 @use 'slick-theme.css';
 @use 'slick.css';
 @use 'top_link.css';
+@use 'homes.css';
+@use 'posts.css';
 
 * {
   margin: 0;
@@ -14,40 +16,6 @@ html body{
   font-family: "Comic Sans MS";
 }
 
-.top1 {
-  height: 700px;
-  background-image: url("../images/torii.jpg");
-  background-size: cover;
-  background-position: top;
-  opacity: 0.9
-}
-.top2 {
-  height: 700px;
-  background-image: url("../images/onomichi1.jpg");
-  background-size: cover;
-  background-position: top;
-  opacity: 0.9;
-}
-.top3 {
-  height: 700px;
-  background-image: url("../images/heiwakouen2.jpg");
-  background-size: cover;
-  background-position: top;
-  opacity: 0.9;
-}
-.top-introduction{
-  background-color: rgba( 173, 216, 238, 0.5);
-}
-
-.about {
-  background-image: url("../images/yakei.jpg");
-  background-size: cover;
-  background-position: top;
-}
-.about-introduction{
-  background-color: rgba( 100, 100, 100, 0.7);
-}
-
 .tab-area {
   height: 50px;
   cursor: pointer;
@@ -56,9 +24,11 @@ html body{
 .tab.active {
   border-bottom: 5px solid #FF99CC;
 }
+
 .content {
   display: none;
 }
+
 .content.show {
   margin-top: 50px;
   display: block;

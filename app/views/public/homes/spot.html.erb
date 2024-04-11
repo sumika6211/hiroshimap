@@ -1,29 +1,29 @@
-<div class = "tab-area d-flex justify-content-center mb-md-1">
-  <h3 class = "tab active d-none d-md-block text-center col-md-3 mx-md-1">
+<div class="tab-area d-flex justify-content-center mb-md-1">
+  <h3 class="tab active d-none d-md-block text-center col-md-3 mx-md-1">
     <i class="fa-solid fa-location-dot"></i> スポットで探す
   </h3>
-  <h3 class = "tab d-none d-md-block text-center col-md-3 mx-md-1">
+  <h3 class="tab d-none d-md-block text-center col-md-3 mx-md-1">
     <i class="fa-solid fa-hashtag"></i> ジャンルで探す
   </h3>
-  <h3 class = "tab d-none d-md-block text-center col-md-3 mx-md-1">
+  <h3 class="tab d-none d-md-block text-center col-md-3 mx-md-1">
     <i class="fa-solid fa-map"></i> エリアで探す
   </h3>
-  <h5 class = "tab active d-md-none text-center mx-3">
+  <h5 class="tab active d-md-none text-center mx-3">
     <i class="fa-solid fa-location-dot"></i>
   </h5>
-  <h5 class = "tab d-md-none text-center mx-3">
+  <h5 class="tab d-md-none text-center mx-3">
     <i class="fa-solid fa-hashtag"></i>
   </h5>
-  <h5 class = "tab d-md-none text-center mx-3">
+  <h5 class="tab d-md-none text-center mx-3">
     <i class="fa-solid fa-map"></i>
   </h5>
 </div>
 
-<div class = "content-area col-md-8 col-12 mx-auto mb-3">
-  <div class = "content show">
-    <div class = "d-flex justify-content-center flex-wrap">
+<div class="content-area col-md-8 col-12 mx-auto mb-3">
+  <div class="content show">
+    <div class="d-flex justify-content-center flex-wrap">
       <% @spots.each do |spot| %>
-        <div class = "mx-5 mb-2 px-3 py-1 rounded-pill bg-info">
+        <div class="mx-md-3 mx-1 mb-2 px-3 py-1 rounded-pill bg-info">
           <%= link_to posts_path(spot_id: spot.id), class: "text-light" do %>
             <i class="fa-solid fa-location-dot"></i> <%= spot.name %>
           <% end %>
@@ -31,10 +31,10 @@
       <% end %>
     </div>
   </div>
-  <div class = "content">
-    <div class = "d-flex justify-content-center flex-wrap">
+  <div class="content">
+    <div class="d-flex justify-content-center flex-wrap">
       <% @genres.each do |genre| %>
-        <div class = "mx-5 mb-2 px-3 py-1 rounded-pill bg-info">
+        <div class="mx-md-3 mx-1 mb-2 px-3 py-1 rounded-pill bg-info">
           <%= link_to posts_path(genre_id: genre.id), class: "text-light" do %>
             <i class="fa-solid fa-hashtag"></i> <%= genre.name %>
           <% end %>
@@ -42,10 +42,10 @@
       <% end %>
     </div>
   </div>
-  <div class = "content">
-    <div class = "d-flex justify-content-center flex-wrap">
+  <div class="content">
+    <div class="d-flex justify-content-center flex-wrap">
       <% @areas.each do |area| %>
-        <div class = "mx-5 mb-2 px-3 py-1 rounded-pill bg-info">
+        <div class="mx-md-3 mx-1 mb-2 px-3 py-1 rounded-pill bg-info">
           <%= link_to posts_path(area_id: area.id), class: "text-light" do %>
             <i class="fa-solid fa-map"></i> <%= area.name %>
           <% end %>
@@ -53,10 +53,10 @@
       <% end %>
     </div>
   </div>
-  <div class = "content">
-    <div class = "d-flex justify-content-center flex-wrap">
+  <div class="content">
+    <div class="d-flex justify-content-center flex-wrap">
       <% @spots.each do |spot| %>
-        <div class = "mx-5 mb-2 px-3 py-1 rounded-pill bg-info">
+        <div class="mx-md-3 mx-1 mb-2 px-3 py-1 rounded-pill bg-info">
           <%= link_to posts_path(spot_id: spot.id), class: "text-light" do %>
             <i class="fa-solid fa-location-dot"></i> <%= spot.name %>
           <% end %>
@@ -64,10 +64,10 @@
       <% end %>
     </div>
   </div>
-  <div class = "content">
-    <div class = "d-flex justify-content-center flex-wrap">
+  <div class="content">
+    <div class="d-flex justify-content-center flex-wrap">
       <% @genres.each do |genre| %>
-        <div class = "mx-5 mb-2 px-3 py-1 rounded-pill bg-info">
+        <div class="mx-md-3 mx-1 mb-2 px-3 py-1 rounded-pill bg-info">
           <%= link_to posts_path(genre_id: genre.id), class: "text-light" do %>
             <i class="fa-solid fa-hashtag"></i> <%= genre.name %>
           <% end %>
@@ -75,10 +75,10 @@
       <% end %>
     </div>
   </div>
-  <div class = "content">
-    <div class = "d-flex justify-content-center flex-wrap">
+  <div class="content">
+    <div class="d-flex justify-content-center flex-wrap">
       <% @areas.each do |area| %>
-        <div class = "mx-5 mb-2 px-3 py-1 rounded-pill bg-info">
+        <div class="mx-md-3 mx-1 mb-2 px-3 py-1 rounded-pill bg-info">
           <%= link_to posts_path(area_id: area.id), class: "text-light" do %>
             <i class="fa-solid fa-map"></i> <%= area.name %>
           <% end %>
@@ -89,12 +89,12 @@
 </div>
 
 <div data-controller="google-map--index" class="row">
-  <div class = "col-md-10 col-12 mx-auto mb-3">
+  <div class="col-md-10 col-12 mx-auto mb-3">
     <div class="mx-md-auto" data-google-map--index-target="map" data-json="<%= @spots_json %>" style="height:70vh;max-width:100%;"></div>
   </div>
 </div>
 
-<div class = "col-md-3 col-8 mx-auto py-1 text-center rounded-pill bg-info">
+<div class="col-md-3 col-8 mx-auto py-1 text-center rounded-pill bg-info">
   <%= link_to posts_path, class: "text-light" do %>
     <h4>投稿一覧</h4>
   <% end %>

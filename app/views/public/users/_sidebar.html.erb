@@ -1,21 +1,21 @@
-<h3 class = "text-center">User info</h3>
-<div class = "row justify-content-center">
-  <div class = "col-md-5 col-3">
+<h3 class="text-center">User info</h3>
+<div class="row justify-content-center">
+  <div class="col-md-6 col-3 text-center">
     <div>
       <%= image_tag current_user.get_profile_image, class: "rounded-circle" %><br>
       <%= current_user.name %>
     </div>
   </div>
 
-  <div class = "col-md-7 col-5">
-    <div class = "user-edit-link mb-3">
+  <div class="col-md-6 col-5 text-center">
+    <div class="user-edit-link mb-3">
       <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
         <i class="fas fa-user-cog"></i>
       <% end %>
     </div>
     <div>
       <%= link_to new_post_path, class: "btn btn-outline-secondary btn-block" do %>
-        投稿する
+        <i class="fa-solid fa-pen-to-square"></i>
       <% end %>
     </div>
   </div>

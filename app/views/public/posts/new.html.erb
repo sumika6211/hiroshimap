@@ -1,29 +1,29 @@
-<div class = "col-md-8 col-12 mx-md-auto">
+<div class="col-md-8 col-12 mx-md-auto">
 
   <h4>投稿フォーム</h4>
 
   <%= form_with model: @post, url: posts_path, method: :post do |f| %>
-    <div class = "field col-md-8 col-10 mb-3">
+    <div class="field col-md-8 col-10 mb-3">
       <%= f.label :"タイトル" %><br>
       <%= f.text_field :name, class: "form-control", placeholder: "お店の名前を入れてください" %>
     </div>
 
-    <div class = "field col-md-8 col-10 mb-3">
+    <div class="field col-md-8 col-10 mb-3">
       <%= f.label :"紹介文" %><br>
       <%= f.text_field :introduction, class: "form-control", placeholder: "お店の感想・お勧めのメニューなど教えてください" %>
     </div>
 
-    <div class = "field col-md-8 col-10 mb-3">
+    <div class="field col-md-8 col-10 mb-3">
       <%= f.label :"画像" %><br>
       <%= f.file_field :image, accept: "image/*" %>
     </div>
 
-    <div class = "selection col-md-8 col-10 mb-3">
+    <div class="selection col-md-8 col-10 mb-3">
       <%= f.label :"スポット選択" %><br>
       <%= f.collection_select :spot_id, Spot.all, :id, :name, include_blank: "選択して下さい" %>
     </div>
 
-    <div class = "collection col-md-8 col-10 mb-3">
+    <div class="collection col-md-8 col-10 mb-3">
       <%= f.label :"ジャンル選択(複数選択可)" %><br>
       <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name, include_hidden: false) do |b| %>
         <%= b.label { b.check_box + b.text } %>
@@ -43,10 +43,10 @@
 
       <%= f.label :"address" %>
       <%= f.text_field :address, list: "address_list", data: { google_map__form_target: "address" } %><br>
-      <datalist id = "address_list" data-google-map--form-target = "addressList" ></datalist>
+      <datalist id="address_list" data-google-map--form-target="addressList" ></datalist>
     </div>
 
-    <div class = "actions col-md-8 col-10 mb-3">
+    <div class="actions col-md-8 col-10 mb-3">
       <%= f.submit "投稿する", class: "btn btn-success" %>
     </div>
   <% end %>

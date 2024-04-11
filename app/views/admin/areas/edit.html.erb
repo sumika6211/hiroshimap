@@ -1,15 +1,15 @@
-<div class = "row">
-  <div class = "col-md-10 col-12 offset-md-2">
+<div class="row">
+  <div class="col-md-10 col-12 offset-md-2">
 
     <h4>エリア編集</h4>
 
     <%= form_with model: @area, url: admin_area_path, method: :patch do |f| %>
-      <div class = "field col-md-8 col-10 mb-3">
+      <div class="field col-md-8 col-10 mb-3">
         <%= f.label :"エリア名" %>
         <%= f.text_field :name, class: "form-control" %>
       </div>
 
-      <div class = "actions col-md-2 col-3 mb-3">
+      <div class="actions col-md-2 col-3 mb-3">
         <%= f.submit "編集完了", class: "btn btn-success" %>
       </div>
     <% end %>

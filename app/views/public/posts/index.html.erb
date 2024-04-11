@@ -1,35 +1,35 @@
-<div class = "row">
+<div class="row">
 
-  <div class = "col-md-2 mb-3">
+  <div class="col-md-2 mb-3">
     <%= render "public/users/sidebar" %>
   </div>
 
-  <div class = "col-md-10 col-12">
-    <h3 class = "text-center">投稿一覧</h3>
+  <div class="col-md-10 col-12">
+    <h3 class="text-center">投稿一覧</h3>
     <%= form_with url: posts_path, method: :get, local: true do |f| %>
-      <div class = "row justify-content-center">
-        <div class = "field col-md-5 mb-1">
+      <div class="row justify-content-center">
+        <div class="field col-md-5 mb-1">
           <%= f.label :"スポットで絞り込む"%><br>
           <%= f.collection_select :spot_id, @spots, :id, :name, { selected: params[:spot_id], include_blank: "選んで下さい" }, { class: "form-control" } %>
         </div>
 
-        <div class = "field col-md-5 mb-1">
+        <div class="field col-md-5 mb-1">
           <%= f.label :"ジャンルで絞り込む"%><br>
           <%= f.collection_select :genre_id, @genres, :id, :name, { selected: params[:genre_id], include_blank: "選んで下さい" }, { class: "form-control" } %>
         </div>
 
-        <div class = "serch-field col-md-5 mb-1">
+        <div class="serch-field col-md-5 mb-1">
           <%= f.label :"キーワード検索" %><br>
           <%= f.search_field :name, value: params[:name], class: "form-control me-2", placeholder: "Search" %>
         </div>
 
-        <div class = "actions col-md-5 mb-1">
+        <div class="actions col-md-5 mb-1">
           <br><%= f.submit "Search", class: "btn btn-outline-success" %>
         </div>
       </div>
     <% end %>
 
-    <div class = "col-md-2 col-6 my-3 mx-auto py-2 text-center rounded-pill bg-info">
+    <div class="col-md-2 col-6 my-3 mx-auto py-2 text-center rounded-pill bg-info">
       <%= link_to posts_path(favorites: "favorite"), "data-turbolinks": false, class: "text-light" do %>
         <i class="fa-solid fa-arrow-trend-up"></i>人気の投稿
       <% end %>

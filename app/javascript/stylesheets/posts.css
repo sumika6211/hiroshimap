@@ -1,0 +1,15 @@
+.card{
+  margin-bottom: 5em;
+}
+
+.card-img{
+  height: 70%;
+  background-position: bottom;
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+}
+
+.card-img-overlay{
+  position: relative;
+}

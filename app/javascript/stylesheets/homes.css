@@ -1,0 +1,37 @@
+.top1 {
+  height: 700px;
+  background-image: url("../images/torii.jpg");
+  background-size: cover;
+  background-position: top;
+  opacity: 0.9
+}
+
+.top2 {
+  height: 700px;
+  background-image: url("../images/onomichi1.jpg");
+  background-size: cover;
+  background-position: top;
+  opacity: 0.9;
+}
+
+.top3 {
+  height: 700px;
+  background-image: url("../images/heiwakouen2.jpg");
+  background-size: cover;
+  background-position: top;
+  opacity: 0.9;
+}
+
+.top-introduction{
+  background-color: rgba( 173, 216, 238, 0.5);
+}
+
+.about {
+  background-image: url("../images/yakei.jpg");
+  background-size: cover;
+  background-position: top;
+}
+
+.about-introduction{
+  background-color: rgba( 100, 100, 100, 0.7);
+}
