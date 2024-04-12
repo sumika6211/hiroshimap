@@ -21,7 +21,7 @@ class Public::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "You have updated user successfully."
+      flash[:notice] = "編集完了!"
       redirect_to user_path(@user)
     else
       render :edit

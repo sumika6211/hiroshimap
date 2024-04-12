@@ -68,6 +68,10 @@
       </nav>
     </header>
 
+    <p class = "flash-message mx-auto text-center">
+      <%= flash[:notice] %>
+    </p>
+
     <div class="view container-fluid">
       <%= yield %>
     </div>

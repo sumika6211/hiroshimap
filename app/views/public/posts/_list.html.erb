@@ -4,9 +4,13 @@
       <%= image_tag 'hiroshima.jpg', class: "card-img" %>
         <div class="card-img-overlay p-0">
           <h6 class="col-10 mx-auto text-center"><%= post.name %></h6>
-          <div class="col-10 mx-auto text-center">
-            <%= link_to post_path(post.id) do %>
-              <%= image_tag post.get_post_image(400,400,300,200), class: "img-fluid" %>
+          <div class="slider col-10 mx-auto text-center">
+            <% post.images.each do |image| %>
+              <div class="col-10 mx-auto text-center">
+                <%= link_to post_path(post.id) do %>
+                  <%= image_tag image.variant(resize_to_fit: [400, 400], gravity: "center", crop: "300x200+0+0"), class: "img-fluid" %>
+                <% end %>
+              </div>
             <% end %>
           </div>
           <p class="col-10 mx-auto">いいね！<%= post.favorites.count %>件</p>
