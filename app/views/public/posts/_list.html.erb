@@ -1,19 +1,29 @@
-<div class="list d-flex justify-content-center flex-wrap col-md-11 col-12 mx-auto">
+<div class="list d-flex justify-content-center flex-wrap col-12 mx-auto">
   <% posts.each do |post| %>
     <div class="card col-md-3 col-12 mx-md-2 my-md-3 my-3 shadow">
       <%= image_tag 'hiroshima.jpg', class: "card-img" %>
         <div class="card-img-overlay p-0">
-          <h6 class="col-10 mx-auto text-center"><%= post.name %></h6>
-          <div class="slider col-10 mx-auto text-center">
-            <% post.images.each do |image| %>
-              <div class="col-10 mx-auto text-center">
+          <h6 class="col-12 text-center"><%= post.name %></h6>
+          <div class="post-img col-md-10 col-12 mx-md-auto">
+            <% if post.images.count == 1 %>
+              <div class="post-img-detail">
                 <%= link_to post_path(post.id) do %>
-                  <%= image_tag image.variant(resize_to_fit: [400, 400], gravity: "center", crop: "300x200+0+0"), class: "img-fluid" %>
+                  <%= image_tag post.images.first.variant(resize_to_fit: [400, 400], gravity: "center", crop: "300x200+0+0"), class: "img-fluid" %>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="slider">
+                <% post.images.each do |image| %>
+                  <div class="post-img-detail">
+                    <%= link_to post_path(post.id) do %>
+                      <%= image_tag image.variant(resize_to_fit: [400, 400], gravity: "center", crop: "300x200+0+0"), class: "img-fluid" %>
+                    <% end %>
+                  </div>
                 <% end %>
               </div>
             <% end %>
+            <p>いいね！<%= post.favorites.count %>件</p>
           </div>
-          <p class="col-10 mx-auto">いいね！<%= post.favorites.count %>件</p>
         </div>
     </div>
   <% end %>

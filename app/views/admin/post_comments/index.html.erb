@@ -5,7 +5,7 @@
 
     <%= form_with url: admin_post_comments_path, method: :get, local: true do |f| %>
       <div class="serch-field col-md-5 mb-1">
-        <%= f.label :"キーワード検索" %><br>
+        <%= f.label :name, :"キーワード検索" %><br>
         <%= f.search_field :name, value: params[:name], class: "form-control me-2", placeholder: "Search" %>
       </div>
 

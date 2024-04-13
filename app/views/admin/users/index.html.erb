@@ -1,11 +1,11 @@
 <div class="row">
-  <div class="col-md-10 col-12 offset-md-2">
+  <div class="col-md-10 col-12 mx-md-auto">
 
     <h4 class="my-3">ユーザー一覧</h4>
 
     <%= form_with url: admin_users_path, method: :get, local: true do |f| %>
-      <div class="serch-field col-md-5 col-10 mb-1">
-        <%= f.label :"キーワード検索" %><br>
+      <div class="serch-field col-md-6 col-10 mb-1">
+        <%= f.label :name, :"キーワード検索" %><br>
         <%= f.search_field :name, value: params[:name], class: "form-control me-2", placeholder: "Search" %>
       </div>
 

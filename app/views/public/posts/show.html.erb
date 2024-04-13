@@ -2,12 +2,12 @@
   <div class="detail col-md-8 col-12 offset-md-2">
     <div class="card shadow">
       <%= image_tag 'hiroshima.jpg', class:"card-img" %>
-      <div class="card-img-overlay">
+      <div class="card-img-overlay col-md-10 col-12 mx-md-auto">
         <div class="post-user d-flex col-md-10 col-12 mx-md-auto mb-1">
-          <div class="col-md-2 col-4 px-0">
+          <div class="col-lg-2 col-4 px-0">
             <%= image_tag @post.user.get_profile_image, class: "rounded-circle" %>
           </div>
-          <table class="d-none d-md-block col-md-7">
+          <table class="d-none d-lg-block col-lg-7">
             <tr>
               <td><%= @post.user.name %></td>
             </tr>
@@ -18,7 +18,7 @@
               <td>スポット：<%= @post.spot.name %></td>
             </tr>
           </table>
-          <table class="d-md-none col-7">
+          <table class="d-lg-none col-7">
             <tr>
               <td><%= @post.user.name %></td>
             </tr>
@@ -30,7 +30,7 @@
             </tr>
           </table>
           <% if @post.user == current_user %>
-            <div class="d-none d-md-block col-md-3 ml-auto">
+            <div class="d-none d-lg-block col-lg-3 ml-auto">
               <%= link_to edit_post_path(@post.id) do %>
                 <i class="fas fa-user-cog"></i>投稿編集<br>
               <% end %>
@@ -38,7 +38,7 @@
                 <i class="fa-solid fa-trash"></i>投稿削除
               <% end %>
             </div>
-            <div class="d-md-none col-1 ml-auto">
+            <div class="d-lg-none col-1 ml-auto">
               <%= link_to edit_post_path(@post.id) do %>
                 <i class="fas fa-user-cog"></i><br>
               <% end %>
@@ -49,37 +49,43 @@
           <% end %>
         </div>
         <div class="post-detail col-md-10 col-12 mx-md-auto">
-          <div class="slider">
-             <% @post.images.each do |image| %>
-              <div class="card-img-top">
-                <%= image_tag image.variant(resize_to_fit: [700, 700], gravity: "center", crop: "700x400+0+0"), class: "img-fluid" %>
-              </div>
-            <% end %>
-          </div>
-            <div class="d-flex bg-white">
-              <% if @post.favorited_by?(current_user) %>
-                <p>
-                  <%= link_to post_favorite_path(@post), method: :delete do %>
-                    <i class="fa-solid fa-heart"></i>
-                  <% end %>
-                  いいね！<%= @post.favorites.count %>件
-                </p>
-              <% else %>
-                <p>
-                  <%= link_to post_favorite_path(@post), method: :post do %>
-                    <i class="fa-regular fa-heart"></i>
-                  <% end %>
-                  いいね！<%= @post.favorites.count %>件
-                </p>
-              <% end %>
-              <p class="ml-md-5 ml-2"><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+          <% if @post.images.count == 1 %>
+            <div class="card-img-top text-center">
+              <%= image_tag @post.images.first.variant(resize_to_fit: [700, 700], gravity: "center", crop: "700x400+0+0"), class: "img-fluid" %>
             </div>
-            <p><%= @post.introduction %></p>
-            <% @post.genres.each do |genre| %>
-              #<%= genre.name %>
+          <% else %>
+            <div class="slider">
+               <% @post.images.each do |image| %>
+                <div class="card-img-top">
+                  <%= image_tag image.variant(resize_to_fit: [700, 700], gravity: "center", crop: "700x400+0+0"), class: "img-fluid" %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="d-flex bg-white">
+            <% if @post.favorited_by?(current_user) %>
+              <p>
+                <%= link_to post_favorite_path(@post), method: :delete do %>
+                  <i class="fa-solid fa-heart"></i>
+                <% end %>
+                いいね！<%= @post.favorites.count %>件
+              </p>
+            <% else %>
+              <p>
+                <%= link_to post_favorite_path(@post), method: :post do %>
+                  <i class="fa-regular fa-heart"></i>
+                <% end %>
+                いいね！<%= @post.favorites.count %>件
+              </p>
             <% end %>
+            <p class="ml-md-5 ml-2"><%= @post.created_at.strftime('%Y/%m/%d') %></p>
           </div>
+          <p><%= @post.introduction %></p>
+          <% @post.genres.each do |genre| %>
+            #<%= genre.name %>
+          <% end %>
         </div>
+      </div>
     </div>
 
     <div class="col-md-10 col-12" data-controller="google-map--show">

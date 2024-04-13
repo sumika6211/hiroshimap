@@ -9,6 +9,7 @@ document.addEventListener('turbolinks:load', function() {
     })
 
   $('.slider').slick({
+    fade:true,//切り替えをフェードで行う。初期値はfalse。
     autoplay: true,//自動的に動き出すか。初期値はfalse。
     autoplaySpeed: 5000,//次のスライドに切り替わる待ち時間
     speed:1500,//スライドの動きのスピード。初期値は300。

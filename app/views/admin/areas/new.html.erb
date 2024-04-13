@@ -5,7 +5,7 @@
 
     <%= form_with model: @area, url: admin_areas_path, method: :post do |f| %>
       <div class="field col-md-8 col-10 mb-3">
-        <%= f.label :"エリア名" %>
+        <%= f.label :name, :"エリア名" %>
         <%= f.text_field :name, class: "form-control", placeholder: "エリア名を入力してください" %>
       </div>
 

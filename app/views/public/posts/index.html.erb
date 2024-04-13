@@ -9,17 +9,17 @@
     <%= form_with url: posts_path, method: :get, local: true do |f| %>
       <div class="row justify-content-center">
         <div class="field col-md-5 mb-1">
-          <%= f.label :"スポットで絞り込む"%><br>
+          <%= f.label :spot_id, :"スポットで絞り込む"%><br>
           <%= f.collection_select :spot_id, @spots, :id, :name, { selected: params[:spot_id], include_blank: "選んで下さい" }, { class: "form-control" } %>
         </div>
 
         <div class="field col-md-5 mb-1">
-          <%= f.label :"ジャンルで絞り込む"%><br>
+          <%= f.label :genre_id, :"ジャンルで絞り込む"%><br>
           <%= f.collection_select :genre_id, @genres, :id, :name, { selected: params[:genre_id], include_blank: "選んで下さい" }, { class: "form-control" } %>
         </div>
 
         <div class="serch-field col-md-5 mb-1">
-          <%= f.label :"キーワード検索" %><br>
+          <%= f.label :name, :"キーワード検索" %><br>
           <%= f.search_field :name, value: params[:name], class: "form-control me-2", placeholder: "Search" %>
         </div>
 

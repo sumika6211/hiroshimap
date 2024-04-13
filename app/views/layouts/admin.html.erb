@@ -13,26 +13,35 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-md">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <div class="navbar-logo p-3">
             <h2>HiroshiMap</h2>
           </div>
-          <ul class="navbar-nav">
-            <div class="row ml-auto">
-              <% if admin_signed_in? %>
-                <li class="nav-link rounded-pill bg-info mx-md-3 mx-1 p-1"><%= link_to "ユーザー一覧", admin_users_path, class: "text-light" %></li>
-                <li class="nav-link rounded-pill bg-info mx-md-3 mx-1 p-1"><%= link_to "コメント一覧", admin_post_comments_path, class: "text-light" %></li>
-                <li class="nav-link rounded-pill bg-info mx-md-3 mx-1 p-1"><%= link_to "スポット一覧", admin_spots_path, class: "text-light" %></li>
-                <li class="nav-link rounded-pill bg-info mx-md-3 mx-1 p-1"><%= link_to "エリア一覧", admin_areas_path, class: "text-light" %></li>
-                <li class="nav-link rounded-pill bg-info mx-md-3 mx-1 p-1"><%= link_to "ジャンル一覧", admin_genres_path, class: "text-light" %></li>
-                <li class="nav-link rounded-pill bg-info mx-md-3 mx-1 p-1"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "text-light" %></li>
-              <% end %>
-            </div>
-          </ul>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <div class="row">
+                <% if admin_signed_in? %>
+                  <li class="nav-link rounded-pill bg-info mx-md-2 mx-1 p-1"><%= link_to "ユーザー一覧", admin_users_path, class: "text-light" %></li>
+                  <li class="nav-link rounded-pill bg-info mx-md-2 mx-1 p-1"><%= link_to "コメント一覧", admin_post_comments_path, class: "text-light" %></li>
+                  <li class="nav-link rounded-pill bg-info mx-md-2 mx-1 p-1"><%= link_to "スポット一覧", admin_spots_path, class: "text-light" %></li>
+                  <li class="nav-link rounded-pill bg-info mx-md-2 mx-1 p-1"><%= link_to "エリア一覧", admin_areas_path, class: "text-light" %></li>
+                  <li class="nav-link rounded-pill bg-info mx-md-2 mx-1 p-1"><%= link_to "ジャンル一覧", admin_genres_path, class: "text-light" %></li>
+                  <li class="nav-link rounded-pill bg-info mx-md-2 mx-1 p-1"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "text-light" %></li>
+                <% end %>
+              </div>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
+
+    <p class = "flash-message mx-auto text-center">
+      <%= flash[:notice] %>
+    </p>
 
     <div class="container-fluid">
       <%= yield %>

@@ -21,9 +21,7 @@
             <td><%= area.id %></td>
             <td><%= area.name %></td>
             <td>
-              <%= link_to edit_admin_area_path(area) do %>
-                編集する
-              <% end %>
+              <%= link_to "編集する", edit_admin_area_path(area) %>
             </td>
           </tr>
         <% end %>
