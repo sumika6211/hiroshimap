@@ -12,6 +12,7 @@ import "controllers"
 import "jquery";
 import "popper.js";
 import "bootstrap";
+import "./namiuchi.js";
 import "./layout.js";
 import "./top_link.js";
 import "../stylesheets/application";

@@ -1,39 +1,46 @@
-<h3 class="text-center mx-auto mb-3">Users info</h3>
-
-<div class="d-flex justify-content-center mb-3">
-  <div class="col-md-1 col-4">
-    <%= image_tag @user.get_profile_image, class: "rounded-circle" %>
+<div class="row">
+  <div class="col-md-2 mb-3">
+    <%= render "public/users/sidebar" %>
   </div>
-  <table class="col-md-2 col-7">
-    <tr>
-      <th>name：</th>
-      <th><%= @user.name %></th>
-      <th></th>
-    </tr>
-    <tr>
-      <th>投稿：</th>
-      <th><%= @user.posts.count %></th>
-    </tr>
-    <% if @user.id == current_user.id %>
-      <tr>
-        <th>
-          <%= link_to "会員情報編集", edit_user_path(@user) %>
-        </th>
-      </tr>
-    <% end %>
-  </table>
-</div>
 
-<div class="tab-area d-flex justify-content-center align-items-end col-md-8 col-12 mx-auto mb-3">
-  <div class="tab active text-center col-md-2 col-5 mx-md-5 mr-1">投稿一覧</div>
-  <div class="tab text-center col-md-2 col-5 mx-md-5 ml-1">いいね！一覧</div>
-</div>
+  <div class="col-md-10 col-12">
+    <h3 class="text-center mx-auto mb-3">User info</h3>
+    <div class="d-flex justify-content-center mb-3">
+      <div class="col-md-1 col-4">
+        <%= image_tag @user.get_profile_image, class: "rounded-circle" %>
+      </div>
+      <table class="col-md-2 col-7">
+        <tr>
+          <th>name：</th>
+          <th><%= @user.name %></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>投稿：</th>
+          <th><%= @user.posts.count %></th>
+        </tr>
+        <% if @user.id == current_user.id %>
+          <tr>
+            <th>
+              <%= link_to "会員情報編集", edit_user_path(@user) %>
+            </th>
+          </tr>
+        <% end %>
+      </table>
+    </div>
 
-<div class="content-area">
-  <div class="content show">
-    <%= render 'public/posts/list', posts: @posts %>
-  </div>
-  <div class="content">
-    <%= render 'public/posts/list', posts: @favorite_posts %>
+    <div class="tab-area d-flex justify-content-center align-items-end col-md-8 col-12 mx-auto mb-3">
+      <div class="tab active text-center col-md-2 col-5 mx-md-5 mr-1">投稿一覧</div>
+      <div class="tab text-center col-md-2 col-5 mx-md-5 ml-1">いいね！一覧</div>
+    </div>
+
+    <div class="content-area">
+      <div class="content show">
+        <%= render 'public/posts/list', posts: @posts %>
+      </div>
+      <div class="content">
+        <%= render 'public/posts/list', posts: @favorite_posts %>
+      </div>
+    </div>
   </div>
 </div>

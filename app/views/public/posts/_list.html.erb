@@ -7,7 +7,7 @@
           <div class="post-img col-md-10 col-12 mx-md-auto">
             <% if post.images.count == 1 %>
               <div class="post-img-detail">
-                <%= link_to post_path(post.id) do %>
+                <%= link_to post_path(post.id), "data-turbolinks": false do %>
                   <%= image_tag post.images.first.variant(resize_to_fit: [400, 400], gravity: "center", crop: "300x200+0+0"), class: "img-fluid" %>
                 <% end %>
               </div>
@@ -15,7 +15,7 @@
               <div class="slider">
                 <% post.images.each do |image| %>
                   <div class="post-img-detail">
-                    <%= link_to post_path(post.id) do %>
+                    <%= link_to post_path(post.id), "data-turbolinks": false do %>
                       <%= image_tag image.variant(resize_to_fit: [400, 400], gravity: "center", crop: "300x200+0+0"), class: "img-fluid" %>
                     <% end %>
                   </div>
