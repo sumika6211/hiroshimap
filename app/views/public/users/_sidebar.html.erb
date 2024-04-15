@@ -9,16 +9,25 @@
     </div>
   </div>
 
-  <div class="col-md-6 col-5 text-center">
-    <div class="user-edit-link mb-3">
-      <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
-        <i class="fas fa-user-cog"></i>
-      <% end %>
-    </div>
-    <div>
-      <%= link_to new_post_path, class: "btn btn-outline-secondary btn-block" do %>
-        <i class="fa-solid fa-pen-to-square"></i>
-      <% end %>
-    </div>
+  <div class="col-md-6 col-5 mt-2">
+    <%= link_to user_relationships_path(current_user.id) do %>
+      <p>フォロー：<%= @user.followeds.count %></p>
+    <% end %>
+    <%= link_to user_relationships_path(current_user.id) do %>
+      <p>フォロワー：<%= @user.followers.count %></p>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-md-10 col-6 mx-auto text-center mt-3">
+  <div class="mb-3">
+    <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to new_post_path, class: "btn btn-outline-secondary btn-block" do %>
+      <i class="fa-solid fa-pen-to-square"></i>
+    <% end %>
   </div>
 </div>

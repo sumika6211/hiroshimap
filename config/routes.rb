@@ -15,7 +15,9 @@ Rails.application.routes.draw do
     get "/homes/spot" => "homes#spot"
     post "/homes/guest_sign_in" => "homes#new_guest", as: "guest_sign_in"
     get "/users/withdrawal_confirm" => "users#withdrawal_confirm", as: "withdrawal_confirm"
-    resources :users, only: [:show, :edit, :update, :destroy]
+    resources :users, only: [:show, :edit, :update, :destroy] do
+      resource :relationships, only: [:show, :create, :destroy]
+    end
     resources :posts do
       resource :favorite, only: [:create, :destroy]
       resources :post_comments, only: [:create, :destroy]
