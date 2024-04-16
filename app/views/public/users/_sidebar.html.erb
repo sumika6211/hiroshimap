@@ -1,8 +1,8 @@
 <h3 class="text-center">My profile</h3>
 <div class="row justify-content-center">
-  <div class="col-md-6 col-3 text-center">
+  <div class="user-image col-md-6 col-3 text-center">
     <div>
-      <%= link_to user_path(current_user.id) do %>
+      <%= link_to user_path(current_user.id), "data-turbolinks": false do %>
         <%= image_tag current_user.get_profile_image, class: "rounded-circle" %><br>
         <%= current_user.name %>
       <% end %>
@@ -10,11 +10,11 @@
   </div>
 
   <div class="col-md-6 col-5 mt-2">
-    <%= link_to user_relationships_path(current_user.id) do %>
-      <p>フォロー：<%= @user.followeds.count %></p>
+    <%= link_to user_relationships_path(current_user.id), "data-turbolinks": false, class: "text-dark" do %>
+      <p>フォロー:<%= current_user.followeds.count %></p>
     <% end %>
-    <%= link_to user_relationships_path(current_user.id) do %>
-      <p>フォロワー：<%= @user.followers.count %></p>
+    <%= link_to user_relationships_path(current_user.id), "data-turbolinks": false, class: "text-dark" do %>
+      <p>フォロワー:<%= current_user.followers.count %></p>
     <% end %>
   </div>
 </div>

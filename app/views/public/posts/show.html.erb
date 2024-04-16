@@ -4,7 +4,7 @@
   </div>
 
   <div class="col-md-10 col-12">
-    <div class="detail col-md-10 col-12 mx-auto">
+    <div class="post-detail col-md-10 col-12 mx-auto">
       <div class="card shadow">
         <%= image_tag 'hiroshima.jpg', class:"card-img" %>
         <div class="card-img-overlay col-md-10 col-12 mx-md-auto">
@@ -55,7 +55,7 @@
               </div>
             <% end %>
           </div>
-          <div class="post-detail col-md-10 col-12 mx-md-auto">
+          <div class="post-image col-md-10 col-12 mx-md-auto">
             <% if @post.images.count == 1 %>
               <div class="card-img-top text-center">
                 <%= image_tag @post.images.first.variant(resize_to_fit: [700, 700], gravity: "center", crop: "700x400+0+0"), class: "img-fluid" %>
@@ -95,7 +95,7 @@
         </div>
       </div>
 
-      <div class="col-md-10 col-12" data-controller="google-map--show">
+      <div class="post-address col-md-10 col-12" data-controller="google-map--show">
         <p>住所：<%= @post.address %></p>
         <div data-google-map--show-target="map" data-json="<%= @post_json %>" style="height:50vh;max-width:100%;"></div>
       </div>

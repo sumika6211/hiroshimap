@@ -1,4 +1,4 @@
-<div class="col-md-8 col-12 mx-md-auto">
+<div class="post-edit col-md-8 col-12 mx-md-auto">
 
   <% if @post.errors.any? %>
     <div class="errors-message mx-auto">
@@ -41,7 +41,7 @@
       <% end %>
     </div>
 
-    <div class="col-md-8 col-12" data-controller="google-map--form">
+    <div class="serch-field col-md-8 col-12" data-controller="google-map--form">
       <%= f.label :"キーワードで探す" %><br>
       <%= f.search_field :keyword, data: { google_map__form_target: "keyword" } %><br>
 
