@@ -1,4 +1,4 @@
-$(function() {
+document.addEventListener('turbolinks:load', function() {
   $('.scroll-top a').on('click',function(event){
     $('body, html').animate({
       scrollTop:0

@@ -100,7 +100,7 @@
         <div data-google-map--show-target="map" data-json="<%= @post_json %>" style="height:50vh;max-width:100%;"></div>
       </div>
       <div class="post-comment mt-3">
-        <p>コメント件数：<%= @post.post_comments.count %></p>
+        <p><i class="fa-regular fa-comment"></i>コメント数：<%= @post.post_comments.count %></p>
         <% @post.post_comments.each do |post_comment| %>
           <div class = "post-comment-detail d-flex mb-1">
             <p class = "mr-3"><%= image_tag post_comment.user.get_profile_image, class: "rounded-circle" %></p>
