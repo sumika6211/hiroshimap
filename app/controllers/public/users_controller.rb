@@ -3,9 +3,6 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts
     @favorite_posts = @posts.includes(:favorites).where("favorites.user_id": @user.id)
-    if @user.email == 'guest@example.com'
-      redirect_to root_path
-    end
   end
 
   def edit
@@ -13,8 +10,8 @@ class Public::UsersController < ApplicationController
     unless @user.id == current_user.id
       redirect_to user_path(current_user)
     end
-    if current_user.email == 'guest@example.com'
-      redirect_to root_path
+    if @user.email == "guest@example.com"
+      redirect_to root_path , notice: "ゲストユーザーはプロフィール編集画面へ遷移できません。"
     end
   end
 
