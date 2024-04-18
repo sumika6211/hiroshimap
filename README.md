@@ -6,6 +6,8 @@
 
 広島グルメのコミュニティサイト
 
+<img src="../public/logo.png">
+
 **テーマを選んだ理由**
 
 観光やお出かけスポットを探すのは容易ですが、そのスポット周辺のグルメやおすすめのお店を調べるのは、<br>
@@ -40,4 +42,12 @@ https://docs.google.com/spreadsheets/d/1vz6ntrPL5pCDlZCVe20AuB58QfOpB-iPd5NXXzfd
 	・JSライブラリ:jQuery
 	・IDE:Cloud9
 
-<!-- ## 使用素材 -->
+## 使用素材
+**フリーイラスト素材として以下を使用**
+
+	・ACイラスト(https://www.ac-illust.com/)
+	・O-DAN(https://o-dan.net/ja/)
+**ロゴ作成に以下を使用**
+
+	・DesignEvo(https://www.designevo.com/jp/)
+

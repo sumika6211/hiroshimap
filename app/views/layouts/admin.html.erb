@@ -43,9 +43,14 @@
       <%= flash[:notice] %>
     </p>
 
-    <div class="container-fluid">
+    <div class="view container-fluid">
       <%= yield %>
     </div>
+
+    <footer class="container-fluid mt-5">
+      <p class="js-pagetop scroll-top"><a href="#">Page Top</a></p>
+      <div id="wrapper"><canvas id="waveCanvas"></canvas></div>
+    </footer>
 
   </body>
 </html>
