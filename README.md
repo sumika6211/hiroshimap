@@ -6,7 +6,7 @@
 
 広島グルメのコミュニティサイト
 
-<img src="../public/logo.png">
+![logo](https://github.com/sumika6211/hiroshimap/assets/153085192/ac628374-00ea-41d5-bbd7-61d8fdb6423c)
 
 **テーマを選んだ理由**
 
