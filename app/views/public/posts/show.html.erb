@@ -15,26 +15,14 @@
               <% end %>
             </div>
             <table class="d-none d-lg-block col-lg-7">
-              <tr>
-                <td><%= @post.user.name %></td>
-              </tr>
-              <tr>
-                <td>店名：<%= @post.name %></td>
-              </tr>
-              <tr>
-                <td>スポット：<%= @post.spot.name %></td>
-              </tr>
+              <tr><td><%= @post.user.name %></td></tr>
+              <tr><td>店名：<%= @post.name %></td></tr>
+              <tr><td>スポット：<%= @post.spot.name %></td></tr>
             </table>
             <table class="d-lg-none col-7">
-              <tr>
-                <td><%= @post.user.name %></td>
-              </tr>
-              <tr>
-                <td><%= @post.name %></td>
-              </tr>
-              <tr>
-                <td><%= @post.spot.name %></td>
-              </tr>
+              <tr><td><%= @post.user.name %></td></tr>
+              <tr><td><%= @post.name %></td></tr>
+              <tr><td><%= @post.spot.name %></td></tr>
             </table>
             <% if @post.user == current_user %>
               <div class="d-none d-lg-block col-lg-3 ml-auto">

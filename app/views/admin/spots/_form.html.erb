@@ -1,0 +1,25 @@
+<div class="field mb-3">
+  <%= f.label :name, :"スポット名" %><br>
+  <%= f.text_field :name, class: "form-control", placeholder: "スポット名を入力してください" %>
+</div>
+
+<div data-controller="google-map--form mb-3">
+  <%= f.label :keyword, :"キーワードで探す" %><br>
+  <%= f.search_field :keyword, data: { google_map__form_target: "keyword" } %><br>
+
+  <%= f.label :latitude, :"緯度" %>
+  <%= f.number_field :latitude, data: { google_map__form_target: "latitude" }, tabindex: -1, readonly: true, class: "looks_disable" %>
+  <%= f.label :longitude, :"経度" %>
+  <%= f.number_field :longitude, data: { google_map__form_target: "longitude" }, tabindex: -1, readonly: true, class: "looks_disable"%><br>
+
+  <div data-google-map--form-target="map" style="height:40vh;max-width:70%;"></div>
+
+  <%= f.label :"address" %>
+  <%= f.text_field :address, list: "address_list", data: { google_map__form_target: "address" } %><br>
+  <datalist id="address_list" data-google-map--form-target="addressList" ></datalist>
+</div>
+
+<div class="select-field mb-3">
+  <%= f.label :area_id, :"所属エリア選択" %><br>
+  <%= f.collection_select :area_id, Area.all, :id, :name, include_blank: "選択して下さい" %>
+</div>
