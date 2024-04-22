@@ -8,8 +8,8 @@
 
 Admin.create!(
   email: "admin@gmail.com",
-  password: "dndn6211",
-  password_confirmation: "dndn6211"
+  #password:
+  #password_confirmation:
 )
 
 genres = %w(
