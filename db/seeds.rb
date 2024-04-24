@@ -7,9 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Admin.create!(
-  email: "admin@gmail.com",
-  password: "dndn6211",
-  password_confirmation: "dndn6211"
+  email: "admin@example.com",
+  password: Rails.application.credentials.admin[:password]
 )
 
 genres = %w(
