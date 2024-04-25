@@ -20,10 +20,10 @@
               <%= image_tag "logo.png" %>
             <% end %>
           </div>
-          <button class="navbar-toggler" type="button" id="btn-menu" data-toggle="collapse" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <div class="row">
                 <% if user_signed_in? %>
@@ -66,7 +66,6 @@
           </div>
         </div>
       </nav>
-      <div class="overlay"></div>
     </header>
 
     <p class = "flash-message mx-auto text-center">
@@ -83,4 +82,3 @@
     </footer>
   </body>
 </html>
-
