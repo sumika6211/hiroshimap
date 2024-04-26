@@ -20,53 +20,50 @@
               <%= image_tag "logo.png" %>
             <% end %>
           </div>
-          <button class="navbar-toggler" type="button" id="btn-menu" data-toggle="collapse" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-              <div class="row">
-                <% if user_signed_in? %>
-                  <li class="nav-link rounded-pill bg-info text-light mr-md-1 px-1">ようこそ<%= current_user.name %>さん！</li>
-                  <li class="nav-link rounded-pill bg-info mx-md-1 px-1">
-                    <%= link_to "/homes/spot", class: "text-light" do %>
-                      <i class="fa-solid fa-location-dot"></i> スポット一覧
-                    <% end %>
-                  </li>
-                  <li class="nav-link rounded-pill bg-info mx-md-1 px-1">
-                    <%= link_to user_path(current_user.id), class: "text-light", "data-turbolinks": false do %>
-                      <i class="fa-solid fa-face-meh"></i> マイページ
-                    <% end %>
-                  </li>
-                  <li class="nav-link rounded-pill bg-info ml-md-1 px-1">
-                    <%= link_to destroy_user_session_path, method: :delete, class: "text-light" do %>
-                      <i class="fa-solid fa-face-frown"></i> ログアウト
-                    <% end %>
-                  </li>
-                <% else %>
-                  <li class="nav-link rounded-pill bg-info text-light mr-md-1 px-1">ようこそゲストさん！</li>
-                  <li class="nav-link rounded-pill bg-info mx-md-1 px-1">
-                    <%= link_to "/homes/spot", class: "text-light" do %>
-                      <i class="fa-solid fa-flag"></i> スポット一覧
-                    <% end %>
-                  </li>
-                  <li class="nav-link rounded-pill bg-info mx-md-1 px-1">
-                    <%= link_to new_user_registration_path, class: "text-light" do %>
-                      <i class="fa-solid fa-circle-right"></i> 新規登録
-                    <% end %>
-                  </li>
-                  <li class="nav-link rounded-pill bg-info ml-md-1 px-1">
-                    <%= link_to new_user_session_path, class: "text-light" do %>
-                      <i class="fa-solid fa-circle-right"></i> ログイン
-                    <% end %>
-                  </li>
-                <% end %>
-              </div>
+              <% if user_signed_in? %>
+                <li class="nav-link rounded-pill bg-info text-light my-3 mr-md-1 px-1">ようこそ<%= current_user.name %>さん！</li>
+                <li class="nav-link rounded-pill bg-info my-3 mx-md-1 px-1">
+                  <%= link_to "/homes/spot", class: "text-light" do %>
+                    <i class="fa-solid fa-location-dot"></i> スポット一覧
+                  <% end %>
+                </li>
+                <li class="nav-link rounded-pill bg-info my-3 mx-md-1 px-1">
+                  <%= link_to user_path(current_user.id), class: "text-light", "data-turbolinks": false do %>
+                    <i class="fa-solid fa-face-meh"></i> マイページ
+                  <% end %>
+                </li>
+                <li class="nav-link rounded-pill bg-info my-3 ml-md-1 px-1">
+                  <%= link_to destroy_user_session_path, method: :delete, class: "text-light" do %>
+                    <i class="fa-solid fa-face-frown"></i> ログアウト
+                  <% end %>
+                </li>
+              <% else %>
+                <li class="nav-link rounded-pill bg-info text-light my-3 mr-md-1 px-1">ようこそゲストさん！</li>
+                <li class="nav-link rounded-pill bg-info my-3 mx-md-1 px-1">
+                  <%= link_to "/homes/spot", class: "text-light" do %>
+                    <i class="fa-solid fa-flag"></i> スポット一覧
+                  <% end %>
+                </li>
+                <li class="nav-link rounded-pill bg-info my-3 mx-md-1 px-1">
+                  <%= link_to new_user_registration_path, class: "text-light" do %>
+                    <i class="fa-solid fa-circle-right"></i> 新規登録
+                  <% end %>
+                </li>
+                <li class="nav-link rounded-pill bg-info my-3 ml-md-1 px-1">
+                  <%= link_to new_user_session_path, class: "text-light" do %>
+                    <i class="fa-solid fa-circle-right"></i> ログイン
+                  <% end %>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>
       </nav>
-      <div class="overlay"></div>
     </header>
 
     <p class = "flash-message mx-auto text-center">
@@ -83,4 +80,3 @@
     </footer>
   </body>
 </html>
-

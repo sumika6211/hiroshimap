@@ -15,7 +15,6 @@ import "bootstrap";
 import "./namiuchi.js";
 import "./layout.js";
 import "./top_link.js";
-import "./slide_menu.js";
 import "../stylesheets/application";
 
 Rails.start()
