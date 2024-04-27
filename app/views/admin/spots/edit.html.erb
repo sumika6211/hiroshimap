@@ -1,6 +1,17 @@
 <div class="row">
   <div class="col-md-8 col-12 mx-md-auto">
 
+    <% if @spot.errors.any? %>
+      <div class="errors-message mx-auto">
+        <%= @spot.errors.count %>件のエラーが発生しました
+        <ul>
+          <% @spot.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <h4>スポット編集</h4>
 
     <%= form_with model: @spot, url: admin_spot_path, method: :patch do |f| %>

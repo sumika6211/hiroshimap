@@ -9,7 +9,7 @@ class Admin::SpotsController < ApplicationController
   def create
     @spot = Spot.new(spot_params)
     if @spot.save
-      flash[:notice] = "You have created spot successfully."
+      flash[:notice] = "スポット作成完了！"
       redirect_to admin_spots_path
     else
       render :new
@@ -28,7 +28,7 @@ class Admin::SpotsController < ApplicationController
   def update
     @spot = Spot.find(params[:id])
     if @spot.update(spot_params)
-      flash[:notice] = "You have updated spot successfully."
+      flash[:notice] = "スポット編集完了！"
       redirect_to admin_spots_path
     else
       render :edit

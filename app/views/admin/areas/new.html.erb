@@ -1,6 +1,17 @@
 <div class="row">
   <div class="col-md-10 col-12 offset-md-2">
 
+    <% if @area.errors.any? %>
+      <div class="errors-message mx-auto">
+        <%= @area.errors.count %>件のエラーが発生しました
+        <ul>
+          <% @area.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <h4>エリアを作成する</h4>
 
     <%= form_with model: @area, url: admin_areas_path, method: :post do |f| %>

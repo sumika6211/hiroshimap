@@ -18,22 +18,32 @@
           <div class="navbar-logo p-3">
             <h2>HiroshiMap</h2>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="d-none d-lg-block">
             <ul class="navbar-nav ml-auto">
-              <div class="row">
-                <% if admin_signed_in? %>
-                  <li class="nav-link rounded-pill bg-info mx-md-2 mx-1 p-1"><%= link_to "ユーザー一覧", admin_users_path, class: "text-light" %></li>
-                  <li class="nav-link rounded-pill bg-info mx-md-2 mx-1 p-1"><%= link_to "コメント一覧", admin_post_comments_path, class: "text-light" %></li>
-                  <li class="nav-link rounded-pill bg-info mx-md-2 mx-1 p-1"><%= link_to "スポット一覧", admin_spots_path, class: "text-light" %></li>
-                  <li class="nav-link rounded-pill bg-info mx-md-2 mx-1 p-1"><%= link_to "エリア一覧", admin_areas_path, class: "text-light" %></li>
-                  <li class="nav-link rounded-pill bg-info mx-md-2 mx-1 p-1"><%= link_to "ジャンル一覧", admin_genres_path, class: "text-light" %></li>
-                  <li class="nav-link rounded-pill bg-info mx-md-2 mx-1 p-1"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "text-light" %></li>
-                <% end %>
-              </div>
+              <% if admin_signed_in? %>
+                <li class="nav-link rounded-pill bg-info mx-2 p-1"><%= link_to "ユーザー一覧", admin_users_path, class: "text-light" %></li>
+                <li class="nav-link rounded-pill bg-info mx-2 p-1"><%= link_to "コメント一覧", admin_post_comments_path, class: "text-light" %></li>
+                <li class="nav-link rounded-pill bg-info mx-2 p-1"><%= link_to "スポット一覧", admin_spots_path, class: "text-light" %></li>
+                <li class="nav-link rounded-pill bg-info mx-2 p-1"><%= link_to "エリア一覧", admin_areas_path, class: "text-light" %></li>
+                <li class="nav-link rounded-pill bg-info mx-2 p-1"><%= link_to "ジャンル一覧", admin_genres_path, class: "text-light" %></li>
+                <li class="nav-link rounded-pill bg-info mx-2 p-1"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "text-light" %></li>
+              <% end %>
             </ul>
+          </div>
+          <div class="d-lg-none">
+            <div class="openbtn"><span></span><span></span><span></span></div>
+            <div id="g-nav" class="pt-5">
+              <ul class="navbar-nav ml-auto">
+                <% if admin_signed_in? %>
+                  <li class="nav-link rounded-pill bg-info m-2 p-1"><%= link_to "ユーザー一覧", admin_users_path, class: "text-light" %></li>
+                  <li class="nav-link rounded-pill bg-info m-2 p-1"><%= link_to "コメント一覧", admin_post_comments_path, class: "text-light" %></li>
+                  <li class="nav-link rounded-pill bg-info m-2 p-1"><%= link_to "スポット一覧", admin_spots_path, class: "text-light" %></li>
+                  <li class="nav-link rounded-pill bg-info m-2 p-1"><%= link_to "エリア一覧", admin_areas_path, class: "text-light" %></li>
+                  <li class="nav-link rounded-pill bg-info m-2 p-1"><%= link_to "ジャンル一覧", admin_genres_path, class: "text-light" %></li>
+                  <li class="nav-link rounded-pill bg-info m-2 p-1"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "text-light" %></li>
+                <% end %>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
