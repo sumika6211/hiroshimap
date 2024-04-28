@@ -18,7 +18,7 @@ class Public::HomesController < ApplicationController
       user.name = "ゲスト"
     end
     sign_in user
-    redirect_to root_path, notice: "ゲストユーザーとしてログインしました"
+    redirect_to "/homes/spot", notice: "ゲストユーザーとしてログインしました"
   end
 
   private

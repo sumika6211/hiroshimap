@@ -27,14 +27,15 @@ class Public::UsersController < ApplicationController
 
   def withdrawal_confirm
     @user = User.find(current_user.id)
-    if current_user.email == 'guest@example.com'
+    if current_user.email == "guest@example.com"
       redirect_to root_path
     end
   end
 
   def destroy
-    user = User.find(current_user)
+    user = User.find(current_user.id)
     user.destroy
+    flash[:notice] = "退会手続き完了しました"
     redirect_to root_path
   end
 
