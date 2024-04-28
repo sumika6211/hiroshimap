@@ -1,42 +1,42 @@
 <div class="field col-md-8 col-10 mb-3">
-  <%= f.label :"タイトル" %><br>
+  <%= f.label :name, :"タイトル" %><br>
   <%= f.text_field :name, class: "form-control", placeholder: "お店の名前を入れてください" %>
 </div>
 
 <div class="field col-md-8 col-10 mb-3">
-  <%= f.label :"紹介文" %><br>
+  <%= f.label :introduction, :"紹介文" %><br>
   <%= f.text_area :introduction, class: "form-control", rows: 5, placeholder: "お店の感想・お勧めのメニューなど教えてください" %>
 </div>
 
 <div class="field col-md-8 col-10 mb-3">
-  <%= f.label :"画像" %><br>
+  <%= f.label :images, :"画像" %><br>
   <%= f.file_field :images, accept: "image/*", multiple: true %>
 </div>
 
 <div class="selection col-md-8 col-10 mb-3">
-  <%= f.label :"スポット選択" %><br>
+  <%= f.label :spot_id, :"スポット選択" %><br>
   <%= f.collection_select :spot_id, Spot.all, :id, :name, include_blank: "選択して下さい" %>
 </div>
 
 <div class="collection col-md-8 col-10 mb-3">
-  <%= f.label :"ジャンル選択(複数選択可)" %><br>
+  <%= f.label :genre_ids, :"ジャンル選択(複数選択可)" %><br>
   <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name, include_hidden: false) do |b| %>
     <%= b.label { b.check_box + b.text } %>
   <% end %>
 </div>
 
 <div class="serch-field col-md-8 col-12" data-controller="google-map--form">
-  <%= f.label :"キーワードで探す" %><br>
+  <%= f.label :keyword, :"キーワードで探す" %><br>
   <%= f.search_field :keyword, data: { google_map__form_target: "keyword" } %><br>
 
-  <%= f.label :"緯度" %>
+  <%= f.label :latitude, :"緯度" %>
   <%= f.number_field :latitude, data: { google_map__form_target: "latitude" }, tabindex: -1, readonly: true, class: "looks_disable" %>
-  <%= f.label :"経度" %>
+  <%= f.label :longitude, :"経度" %>
   <%= f.number_field :longitude, data: { google_map__form_target: "longitude" }, tabindex: -1, readonly: true, class: "looks_disable"%><br>
 
   <div data-google-map--form-target="map" style="height:50vh;max-width:100%;"></div>
 
-  <%= f.label :"address" %>
+  <%= f.label :address %>
   <%= f.text_field :address, list: "address_list", data: { google_map__form_target: "address" } %><br>
   <datalist id="address_list" data-google-map--form-target="addressList" ></datalist>
 </div>
