@@ -2,7 +2,7 @@ class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
-    @favorite_posts = @posts.includes(:favorites).where("favorites.user_id": @user.id)
+    @favorite_posts = Post.includes(:favorites).where("favorites.user_id": @user.id)
   end
 
   def edit
