@@ -23,7 +23,7 @@
 
   <% end %>
 
-  <%= link_to post_path(@post.id) do %>
+  <%= link_to post_path(@post.id), "data-turbolinks": false do %>
     <i class="fa-solid fa-circle-left"></i>戻る
   <% end %>
   <%= link_to post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>

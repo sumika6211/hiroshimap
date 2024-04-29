@@ -12,6 +12,9 @@ class Post < ApplicationRecord
   validates :introduction, presence: true
   validates :images, presence: true
   validates :spot_id, presence: true
+  validates :address, presence: true
+  validates :latitude, presence: true
+  validates :longitude, presence: true
 
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
