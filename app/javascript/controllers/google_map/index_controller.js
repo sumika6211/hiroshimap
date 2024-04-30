@@ -24,9 +24,11 @@ export default class extends ApplicationController {
     const loader = this.setLoader()
     loader.load().then(async () => {
       const { Map } = await google.maps.importLibrary("maps");
+      const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
       map = new Map(this.mapTarget, {
         center: this.locationValue,
         zoom: this.zoomValue,
+        mapId: 'DEMO_MAP_ID'
       })
       this.addMarkersToMap()
     })
@@ -41,10 +43,10 @@ export default class extends ApplicationController {
   }
 
   addMarkerToMarkers(o) {
-    this._marker = new google.maps.Marker({
+    this._marker = new google.maps.marker.AdvancedMarkerElement({
       position: { lat: o.lat, lng: o.lng },
       map,
-      name: o.name
+      title: o.name
     })
     markers.push(this._marker)
   }
@@ -79,3 +81,24 @@ export default class extends ApplicationController {
     }
   }
 }
+
+//new google.maps.Marker
+// 
+//new google.maps.marker.AdvancedMarkerElement
+
+//const { Map } = await google.maps.importLibrary("maps");
+//
+//const { Map } = await google.maps.importLibrary("maps");
+//const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+
+//map = new Map(this.mapTarget, {
+//  center: this.locationValue,
+//  zoom: this.zoomValue
+//})
+//
+//map = new Map(this.mapTarget, {
+//  center: this.locationValue,
+//  zoom: this.zoomValue,
+//  mapId: 'DEMO_MAP_ID'
+//})
+
