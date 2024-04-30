@@ -19,7 +19,7 @@
 </div>
 
 <div class="collection col-md-8 col-10 mb-3">
-  <%= f.label :genre_ids, :"ジャンル選択(複数選択可)" %><br>
+  <label>ジャンル選択(複数選択可)</label>
   <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name, include_hidden: false) do |b| %>
     <%= b.label { b.check_box + b.text } %>
   <% end %>
