@@ -24,9 +24,11 @@ export default class extends ApplicationController {
     const loader = this.setLoader()
     loader.load().then(async () => {
       const { Map } = await google.maps.importLibrary("maps");
+      const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
       map = new Map(this.mapTarget, {
         center: this.Value,
         zoom: this.zoomValue,
+        mapId: 'DEMO_MAP_ID'
       })
       this.initMarker()
       map.setCenter(this.locationValue)
@@ -112,7 +114,7 @@ export default class extends ApplicationController {
   }
 
   newMarker() {
-    marker = new google.maps.Marker({
+    marker = new google.maps.marker.AdvancedMarkerElement({
       map: map,
       position: this.locationValue
     })
