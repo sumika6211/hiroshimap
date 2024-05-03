@@ -81,24 +81,3 @@ export default class extends ApplicationController {
     }
   }
 }
-
-//new google.maps.Marker
-// 
-//new google.maps.marker.AdvancedMarkerElement
-
-//const { Map } = await google.maps.importLibrary("maps");
-//
-//const { Map } = await google.maps.importLibrary("maps");
-//const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
-
-//map = new Map(this.mapTarget, {
-//  center: this.locationValue,
-//  zoom: this.zoomValue
-//})
-//
-//map = new Map(this.mapTarget, {
-//  center: this.locationValue,
-//  zoom: this.zoomValue,
-//  mapId: 'DEMO_MAP_ID'
-//})
-
