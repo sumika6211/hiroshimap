@@ -24,9 +24,4 @@ RSpec.describe "Tops", type: :system do
       expect(page).to have_link, href: destroy_user_session_path
     end
   end
-
-  context "トップページの確認" do
-
-  end
-
 end
