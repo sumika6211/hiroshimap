@@ -30,9 +30,11 @@
   <%= f.search_field :keyword, data: { google_map__form_target: "keyword" } %><br>
 
   <%= f.label :latitude, :"緯度" %>
-  <%= f.number_field :latitude, data: { google_map__form_target: "latitude" }, tabindex: -1, readonly: true, class: "looks_disable" %>
+  <div id="show_latitude">0</div>
+  <%= f.hidden_field :latitude, data: { google_map__form_target: "latitude" } %>
   <%= f.label :longitude, :"経度" %>
-  <%= f.number_field :longitude, data: { google_map__form_target: "longitude" }, tabindex: -1, readonly: true, class: "looks_disable"%><br>
+  <div id="show_longitude">0</div>
+  <%= f.hidden_field :longitude, data: { google_map__form_target: "longitude" } %><br>
 
   <div data-google-map--form-target="map" style="height:50vh;max-width:100%;"></div>
 

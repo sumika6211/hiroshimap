@@ -123,6 +123,8 @@ export default class extends ApplicationController {
   writeToLocationForm(location) {
     this.latitudeTarget.value = location.lat
     this.longitudeTarget.value = location.lng
+    document.getElementById('show_latitude').textContent = location.lat
+    document.getElementById('show_longitude').textContent = location.lng
   }
 
   clearLocationForm() {
