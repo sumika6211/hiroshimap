@@ -35,7 +35,7 @@
 
 ER図<br>
 ![hiroshimap_ER図](https://github.com/sumika6211/hiroshimap/assets/153085192/22246cd2-7585-4f21-bba6-4d619778482f)
-https://drive.google.com/file/d/1pzvC0fgFRLfC0cnLBWK1z9QlenLQGL9E/view?usp=sharing
+
 
 テーブル定義書<br>
 https://docs.google.com/spreadsheets/d/1YL76pPkgcckaPjbwk668jl_KSBf8yUinbg-0wQBpK5Y/edit?usp=sharing
@@ -61,6 +61,6 @@ https://docs.google.com/spreadsheets/d/1vz6ntrPL5pCDlZCVe20AuB58QfOpB-iPd5NXXzfd
 
 	・DesignEvo(https://www.designevo.com/jp/)
 
-**参考にした記事**
+**デザインで参考にした記事**
 
 	・動くWebデザインアイデア帳(https://coco-factory.jp/ugokuweb/)
