@@ -3,9 +3,10 @@ FactoryBot.define do
     name { "お好み焼き" }
     introduction { "肉玉そば750円" }
     spot_id { 1 }
-    images { fixture_file_upload('/images/no_image.jpg') }
+    images { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/files/image/no_image.jpg')) }
     address { Faker::Lorem.characters(number: 5) }
-    latitude { Faker::Lorem.characters(number: 5).to_i }
-    longitude { Faker::Lorem.characters(number: 5).to_i }
+    latitude { 123 }
+    longitude { 123 }
+    user
   end
 end
