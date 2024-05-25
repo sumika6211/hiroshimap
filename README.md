@@ -40,6 +40,9 @@ ER図<br>
 テーブル定義書<br>
 https://docs.google.com/spreadsheets/d/1YL76pPkgcckaPjbwk668jl_KSBf8yUinbg-0wQBpK5Y/edit?usp=sharing
 
+インフラ設計書<br>
+https://docs.google.com/spreadsheets/d/1HmzaYag4dSIdSG2WQPa2jHdmaI6jZMoCmMd4Ghms9Hc/edit?usp=sharing
+
 ## 実装機能リストのURL
 
 https://docs.google.com/spreadsheets/d/1vz6ntrPL5pCDlZCVe20AuB58QfOpB-iPd5NXXzfdIfs/edit?usp=sharing
