@@ -67,3 +67,4 @@ end
 gem "net-pop"
 gem "net-imap"
 gem "net-smtp"
+gem "aws-sdk-s3"
