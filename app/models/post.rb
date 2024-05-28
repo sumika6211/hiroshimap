@@ -9,6 +9,7 @@ class Post < ApplicationRecord
   has_many_attached :images
 
   validates :name, presence: true
+  validates :user_id, presence: true
   validates :introduction, presence: true
   validates :images, presence: true
   validates :spot_id, presence: true
