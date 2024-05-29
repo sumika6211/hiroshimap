@@ -56,10 +56,15 @@ https://docs.google.com/spreadsheets/d/1vz6ntrPL5pCDlZCVe20AuB58QfOpB-iPd5NXXzfd
 	・IDE:Cloud9
 
 ## 使用素材
+**アイコン素材として以下を使用**
+
+	・Font Awesome(https://fontawesome.com/)
+
 **フリーイラスト素材として以下を使用**
 
 	・ACイラスト(https://www.ac-illust.com/)
 	・O-DAN(https://o-dan.net/ja/)
+
 **ロゴ作成に以下を使用**
 
 	・DesignEvo(https://www.designevo.com/jp/)
