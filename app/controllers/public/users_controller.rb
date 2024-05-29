@@ -17,11 +17,15 @@ class Public::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      flash[:notice] = "編集完了!"
-      redirect_to user_path(@user)
+    if @user == current_user
+      if @user.update(user_params)
+        flash[:notice] = "編集完了!"
+        redirect_to user_path(@user)
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to user_path(@user)
     end
   end
 
