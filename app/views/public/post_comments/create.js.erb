@@ -1,0 +1,7 @@
+$('#post-comment-details').append(`
+  <%=j render 'public/post_comments/post_comment', post: @post, post_comment: @post_comment %>
+`);
+
+$('#comment-form').val('');
+
+$('#comment-count').text('<%= @post.post_comments.size %>');

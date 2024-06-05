@@ -1,0 +1,3 @@
+$('#post-comment-detail__<%= @post_comment.id %>').remove();
+
+$('#comment-count').text('<%= @post.post_comments.size %>');
