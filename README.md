@@ -49,7 +49,7 @@ https://docs.google.com/spreadsheets/d/1vz6ntrPL5pCDlZCVe20AuB58QfOpB-iPd5NXXzfd
 
 ## 開発環境
 
-	・OS:Linux(CentOS)
+	・OS:Linux(Amazon Linux 2)
 	・言語:HTML,CSS,JavaScript,Ruby,SQL
 	・フレームワーク:Ruby on Rails
 	・JSライブラリ:jQuery
@@ -69,6 +69,6 @@ https://docs.google.com/spreadsheets/d/1vz6ntrPL5pCDlZCVe20AuB58QfOpB-iPd5NXXzfd
 
 	・DesignEvo(https://www.designevo.com/jp/)
 
-**デザインで参考にした記事**
+**動的デザインで参考にした記事**
 
 	・動くWebデザインアイデア帳(https://coco-factory.jp/ugokuweb/)
